@@ -1,0 +1,355 @@
+/* ==========================================================================
+   CARDS EXECUTIVOS, KPIS E MEMORANDO (/css/components/card.css)
+   ========================================================================== */
+
+.page-hero-banner {
+  background: linear-gradient(135deg, var(--bg-surface) 0%, var(--bg-surface-alt) 100%);
+  border: 1px solid var(--border-subtle);
+  border-left: 5px solid var(--brand-gold);
+  border-radius: var(--radius-lg);
+  padding: 1.4rem 1.75rem;
+  margin-bottom: 1.5rem;
+  box-shadow: var(--shadow-card);
+}
+
+.page-eyebrow {
+  display: inline-block;
+  font-size: 0.74rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  color: var(--accent-secondary);
+  margin-bottom: 0.35rem;
+}
+
+.page-hero-banner h2 {
+  margin: 0 0 0.4rem 0;
+  font-size: clamp(1.35rem, 2.2vw, 1.75rem);
+  font-weight: 800;
+  color: var(--text-primary);
+}
+
+.page-hero-lead {
+  margin: 0;
+  font-size: 0.96rem;
+  color: var(--text-secondary);
+  max-width: 82ch;
+}
+
+/* Grid de 4 KPIs Clicáveis */
+.kpi-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(225px, 1fr));
+  gap: 1rem;
+  margin-bottom: 1.25rem;
+}
+
+.kpi-card-btn {
+  width: 100%;
+  text-align: left;
+  background-color: var(--bg-surface);
+  border: 1.5px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  padding: 1.15rem 1.25rem;
+  color: var(--text-primary);
+  font-family: inherit;
+  cursor: pointer;
+  box-shadow: var(--shadow-card);
+  transition: transform var(--transition-ui), border-color var(--transition-ui), background-color var(--transition-ui);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.kpi-card-btn:hover {
+  transform: translateY(-2px);
+  border-color: var(--brand-gold);
+}
+
+.kpi-card-btn[aria-expanded="true"] {
+  border-color: var(--brand-gold);
+  background-color: var(--bg-surface-alt);
+  box-shadow: 0 0 0 2px rgba(212, 167, 46, 0.35);
+}
+
+.kpi-card-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  width: 100%;
+  margin-bottom: 0.5rem;
+}
+
+.kpi-card-label {
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: var(--text-secondary);
+}
+
+.kpi-card-value {
+  font-size: clamp(1.55rem, 2.3vw, 2rem);
+  font-weight: 800;
+  color: var(--text-primary);
+  margin: 0.15rem 0 0.3rem;
+  font-variant-numeric: tabular-nums;
+}
+
+.kpi-card-comp {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.kpi-click-hint {
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: var(--accent-primary);
+}
+
+/* Badges Semânticos */
+.exec-badge {
+  display: inline-flex;
+  align-items: center;
+  font-size: 0.72rem;
+  font-weight: 700;
+  padding: 0.18rem 0.55rem;
+  border-radius: 999px;
+  white-space: nowrap;
+}
+
+.exec-badge-ok {
+  background-color: var(--badge-ok-bg);
+  color: var(--badge-ok-text);
+  border: 1px solid var(--badge-ok-border);
+}
+
+.exec-badge-alert {
+  background-color: var(--badge-alert-bg);
+  color: var(--badge-alert-text);
+  border: 1px solid var(--badge-alert-border);
+}
+
+.exec-badge-warn {
+  background-color: var(--badge-warn-bg);
+  color: var(--badge-warn-text);
+  border: 1px solid var(--badge-warn-border);
+}
+
+.exec-badge-info {
+  background-color: var(--badge-info-bg);
+  color: var(--badge-info-text);
+  border: 1px solid var(--badge-info-border);
+}
+
+/* Painel Expansível de Detalhe do KPI Selecionado */
+.kpi-detail-drawer {
+  background-color: var(--bg-surface-alt);
+  border: 1px solid var(--brand-gold);
+  border-radius: var(--radius-lg);
+  padding: 1.25rem 1.5rem;
+  margin-bottom: 1.5rem;
+  box-shadow: var(--shadow-card);
+}
+
+.kpi-detail-header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  margin-bottom: 0.65rem;
+}
+
+.kpi-detail-header h3 {
+  margin: 0;
+  font-size: 1.05rem;
+  color: var(--text-primary);
+}
+
+.kpi-detail-body {
+  margin: 0 0 1rem 0;
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  max-width: 85ch;
+}
+
+.kpi-detail-metrics {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 0.75rem;
+}
+
+.kpi-mini-stat {
+  background-color: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  padding: 0.7rem 0.9rem;
+}
+
+.kpi-mini-stat span {
+  display: block;
+  font-size: 0.75rem;
+  color: var(--text-muted);
+}
+
+.kpi-mini-stat strong {
+  font-size: 0.9rem;
+  color: var(--text-primary);
+  font-variant-numeric: tabular-nums;
+}
+
+/* Grid de 2 Colunas da Visão Executiva */
+.exec-two-col {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.exec-panel-card {
+  background-color: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  padding: 1.5rem;
+  box-shadow: var(--shadow-card);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.exec-panel-card h3 {
+  margin: 0 0 0.85rem 0;
+  font-size: 1.1rem;
+  color: var(--text-primary);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  border-bottom: 1px solid var(--border-subtle);
+  padding-bottom: 0.65rem;
+}
+
+/* Carta Executiva à CEO */
+.ceo-memo-box {
+  background-color: var(--bg-surface-alt);
+  border: 1px solid var(--border-subtle);
+  border-left: 4px solid var(--brand-teal);
+  border-radius: var(--radius-md);
+  padding: 1.15rem 1.35rem;
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+}
+
+.ceo-memo-subject {
+  font-weight: 700;
+  color: var(--text-primary);
+  margin: 0 0 0.75rem 0;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px dashed var(--border-subtle);
+  font-size: 0.86rem;
+}
+
+.ceo-memo-box p {
+  margin: 0 0 0.65rem 0;
+}
+
+.ceo-memo-closing {
+  margin-top: 0.85rem !important;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+/* Lista de Gargalos e Caixa de Decisão */
+.bottleneck-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+  margin-bottom: 1.25rem;
+}
+
+.bottleneck-item {
+  background-color: var(--bg-surface-alt);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  padding: 0.9rem 1.1rem;
+}
+
+.bottleneck-item-top {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  margin-bottom: 0.3rem;
+}
+
+.bottleneck-item-top strong {
+  font-size: 0.92rem;
+  color: var(--text-primary);
+}
+
+.bottleneck-metric-pill {
+  font-size: 0.76rem;
+  font-weight: 700;
+  padding: 0.15rem 0.55rem;
+  border-radius: var(--radius-sm);
+  background-color: var(--badge-warn-bg);
+  color: var(--badge-warn-text);
+  border: 1px solid var(--badge-warn-border);
+  font-variant-numeric: tabular-nums;
+}
+
+.bottleneck-item p {
+  margin: 0;
+  font-size: 0.84rem;
+  color: var(--text-secondary);
+}
+
+.decision-callout {
+  background: linear-gradient(135deg, rgba(15, 92, 110, 0.28), rgba(212, 167, 46, 0.14));
+  border: 1.5px solid var(--brand-gold);
+  border-radius: var(--radius-md);
+  padding: 1.1rem 1.25rem;
+}
+
+.decision-callout h4 {
+  margin: 0 0 0.35rem 0;
+  font-size: 0.95rem;
+  color: var(--text-primary);
+}
+
+.decision-callout p {
+  margin: 0 0 0.9rem 0;
+  font-size: 0.86rem;
+  color: var(--text-secondary);
+}
+
+.decision-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.65rem;
+}
+
+/* Barra de Navegação Sequencial na Base do Main */
+.main-seq-footer {
+  margin-top: 2rem;
+  padding: 1rem 1.25rem;
+  background-color: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.seq-status-text {
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: var(--text-secondary);
+}

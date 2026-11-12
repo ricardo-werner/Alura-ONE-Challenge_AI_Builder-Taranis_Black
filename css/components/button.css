@@ -1,0 +1,177 @@
+/* ==========================================================================
+   BOTÕES E CONTROLES INTERATIVOS (/css/components/button.css)
+   ========================================================================== */
+
+.btn-header {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.45rem;
+  padding: 0.45rem 0.9rem;
+  font-size: 0.82rem;
+  font-weight: 600;
+  font-family: inherit;
+  color: var(--brand-white);
+  background-color: rgba(255, 255, 255, 0.08);
+  border: 1.5px solid rgba(212, 167, 46, 0.55);
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  transition: all var(--transition-ui);
+}
+
+.btn-header:hover:not(:disabled) {
+  background-color: rgba(212, 167, 46, 0.22);
+  border-color: var(--brand-gold);
+}
+
+.btn-header:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+.btn-header-gold {
+  background-color: var(--brand-gold);
+  color: var(--brand-navy);
+  border-color: var(--brand-gold);
+  font-weight: 700;
+}
+
+.btn-header-gold:hover:not(:disabled) {
+  background-color: var(--brand-gold-hover);
+}
+
+/* Botões do Menu Lateral (Aside Tabs) */
+.aside-tab-btn {
+  width: 100%;
+  text-align: left;
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  padding: 0.65rem 0.85rem;
+  border-radius: var(--radius-md);
+  background: transparent;
+  border: 1.5px solid transparent;
+  color: var(--text-secondary);
+  font-family: inherit;
+  cursor: pointer;
+  transition: all var(--transition-ui);
+}
+
+.aside-tab-btn:hover {
+  background-color: var(--bg-surface);
+  color: var(--text-primary);
+  border-color: var(--border-subtle);
+}
+
+.aside-tab-num {
+  width: 26px;
+  height: 26px;
+  border-radius: 6px;
+  background-color: var(--bg-surface-alt);
+  border: 1px solid var(--border-strong);
+  color: var(--text-secondary);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.78rem;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+.aside-tab-text {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.aside-tab-title {
+  font-size: 0.88rem;
+  font-weight: 700;
+  line-height: 1.25;
+}
+
+.aside-tab-sub {
+  font-size: 0.72rem;
+  color: var(--text-muted);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.aside-tab-btn[aria-selected="true"] {
+  background-color: var(--brand-gold);
+  color: var(--brand-navy);
+  border-color: var(--brand-gold);
+  box-shadow: 0 4px 12px rgba(212, 167, 46, 0.28);
+}
+
+.aside-tab-btn[aria-selected="true"] .aside-tab-num {
+  background-color: var(--brand-navy);
+  color: var(--brand-gold);
+  border-color: var(--brand-navy);
+}
+
+.aside-tab-btn[aria-selected="true"] .aside-tab-sub {
+  color: #1E293B;
+  font-weight: 600;
+}
+
+/* Botões de Ação Interna e Navegação Sequencial */
+.btn-exec-action {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.6rem 1.1rem;
+  font-size: 0.86rem;
+  font-weight: 700;
+  font-family: inherit;
+  border-radius: var(--radius-sm);
+  border: 1.5px solid var(--border-strong);
+  background-color: var(--bg-surface-alt);
+  color: var(--text-primary);
+  cursor: pointer;
+  transition: all var(--transition-ui);
+}
+
+.btn-exec-action:hover:not(:disabled) {
+  border-color: var(--accent-primary);
+  background-color: var(--bg-interactive);
+}
+
+.btn-exec-primary {
+  background-color: var(--brand-gold);
+  color: var(--brand-navy);
+  border-color: var(--brand-gold);
+}
+
+.btn-exec-primary:hover:not(:disabled) {
+  background-color: var(--brand-gold-hover);
+}
+
+@media (max-width: 1024px) {
+  .aside-tab-btn {
+    width: auto;
+    white-space: nowrap;
+  }
+  .aside-tab-sub {
+    display: none;
+  }
+}
+
+[data-theme="light"] .btn-header {
+  color: var(--brand-navy);
+  background-color: var(--bg-app);
+  border-color: var(--border-strong);
+}
+
+[data-theme="light"] .btn-header:hover:not(:disabled) {
+  background-color: var(--bg-interactive);
+  border-color: var(--brand-teal);
+}
+
+[data-theme="light"] .btn-header-gold {
+  background-color: var(--brand-gold);
+  color: var(--brand-navy);
+  border-color: var(--brand-gold);
+}

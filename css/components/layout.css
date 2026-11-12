@@ -1,0 +1,270 @@
+/* ==========================================================================
+   LAYOUT SEMÂNTICO: HEADER, ASIDE, MAIN E FOOTER (/css/components/layout.css)
+   ========================================================================== */
+
+/* HEADER: Sempre em Azul Marinho Institucional (#0E1E33) para leitura perfeita do Logo em Ouro e Branco */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background-color: var(--brand-navy);
+  color: var(--brand-white);
+  border-bottom: 2px solid var(--brand-gold);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.35);
+}
+
+.header-inner {
+  max-width: 1600px;
+  margin: 0 auto;
+  padding: 0.65rem 1.5rem;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.header-brand {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.taranis-logo {
+  height: 48px;
+  width: auto;
+  display: block;
+}
+
+.header-titles {
+  border-left: 1px solid rgba(212, 167, 46, 0.4);
+  padding-left: 1rem;
+}
+
+.header-titles h1 {
+  margin: 0;
+  font-size: clamp(1rem, 1.5vw, 1.22rem);
+  font-weight: 700;
+  color: var(--brand-white);
+  letter-spacing: -0.01em;
+}
+
+.header-subtitle {
+  margin: 0;
+  font-size: 0.78rem;
+  color: #CBD5E1;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.sim-tag {
+  background-color: rgba(212, 167, 46, 0.2);
+  color: var(--brand-gold);
+  border: 1px solid rgba(212, 167, 46, 0.55);
+  padding: 0.08rem 0.5rem;
+  border-radius: 999px;
+  font-weight: 600;
+  font-size: 0.72rem;
+}
+
+.header-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+/* WORKSPACE GRID: ASIDE + MAIN */
+.app-workspace {
+  flex: 1;
+  width: 100%;
+  max-width: 1600px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: var(--aside-width) minmax(0, 1fr);
+  align-items: start;
+}
+
+/* ASIDE: Menu Principal de 7 Páginas */
+.site-aside {
+  position: sticky;
+  top: var(--sticky-header-height, 5.25rem);
+  height: calc(100vh - var(--sticky-header-height, 5.25rem));
+  overflow-y: auto;
+  background-color: var(--bg-aside);
+  border-right: 1px solid var(--border-subtle);
+  padding: 1.25rem 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 1.5rem;
+}
+
+.aside-section-label {
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text-muted);
+  margin: 0 0 0.65rem 0.5rem;
+}
+
+.aside-nav-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.aside-context-box {
+  background-color: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  padding: 0.9rem;
+  font-size: 0.78rem;
+  color: var(--text-secondary);
+}
+
+.aside-context-box strong {
+  color: var(--text-primary);
+  display: block;
+  margin-bottom: 0.25rem;
+}
+
+.aside-context-list {
+  margin: 0.4rem 0 0 0;
+  padding-left: 1rem;
+  line-height: 1.5;
+}
+
+/* MAIN: Área Principal de Conteúdo */
+.site-main {
+  padding: 1.75rem 2rem 3rem;
+  min-width: 0;
+}
+
+.page-panel[hidden] {
+  display: none !important;
+}
+
+/* FOOTER: Rodapé Institucional de Ricardo Werner */
+.site-footer {
+  background-color: var(--brand-navy);
+  color: var(--brand-light-gray);
+  border-top: 2px solid var(--brand-gold);
+  padding: 1.25rem 1.5rem;
+  margin-top: auto;
+}
+
+.footer-container {
+  max-width: 1600px;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.footer-brand {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1.25rem;
+}
+
+.footer-logo {
+  height: 46px;
+  width: auto;
+  display: block;
+}
+
+.footer-copyright {
+  margin: 0;
+  font-size: 0.86rem;
+  color: #D4DEE9;
+}
+
+.footer-social {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+}
+
+.social-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+  padding: 0.45rem 0.85rem;
+  border-radius: var(--radius-sm);
+  background-color: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(212, 167, 46, 0.45);
+  color: var(--brand-white);
+  text-decoration: none;
+  font-size: 0.82rem;
+  font-weight: 600;
+  transition: background-color var(--transition-ui), border-color var(--transition-ui);
+}
+
+.social-link:hover {
+  background-color: rgba(212, 167, 46, 0.2);
+  border-color: var(--brand-gold);
+}
+
+.social-icon {
+  width: 18px;
+  height: 18px;
+  display: block;
+}
+
+/* Responsividade (Tablet e Mobile) */
+@media (max-width: 1024px) {
+  .app-workspace {
+    grid-template-columns: 1fr;
+  }
+
+  .site-aside {
+    position: static;
+    height: auto;
+    border-right: none;
+    border-bottom: 1px solid var(--border-subtle);
+    padding: 0.85rem 1.25rem;
+  }
+
+  .aside-nav-list {
+    flex-direction: row;
+    overflow-x: auto;
+    padding-bottom: 0.25rem;
+  }
+
+  .aside-context-box {
+    display: none;
+  }
+
+  .site-main {
+    padding: 1.25rem;
+  }
+}
+
+/* Adaptação do Header no Modo Claro para exibir o Logotipo TARANIS Black-light */
+[data-theme="light"] .site-header {
+  background-color: var(--bg-surface);
+  color: var(--text-primary);
+  border-bottom: 2px solid var(--brand-gold);
+  box-shadow: 0 4px 14px rgba(14, 30, 51, 0.08);
+}
+
+[data-theme="light"] .header-titles h1 {
+  color: var(--brand-navy);
+}
+
+[data-theme="light"] .header-subtitle {
+  color: var(--text-secondary);
+}
+
+[data-theme="light"] .sim-tag {
+  background-color: #FEF3C7;
+  color: #78350F;
+  border-color: #D97706;
+}

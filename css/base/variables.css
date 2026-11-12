@@ -1,0 +1,103 @@
+/* ==========================================================================
+   VARIÁVEIS GLOBAIS E PALETA INSTITUCIONAL (/css/base/variables.css)
+   ========================================================================== */
+
+:root {
+  /* Paleta Institucional Taranis Black */
+  --brand-navy: #0E1E33;
+  --brand-navy-light: #152C4A;
+  --brand-navy-elevated: #1D3A5F;
+  --brand-teal: #0F5C6E;
+  --brand-teal-dark: #0A4654;
+  --brand-teal-bright: #5CE1E6;
+  --brand-gold: #D4A72E;
+  --brand-gold-hover: #E5B83B;
+  --brand-gold-dark: #8A6200;
+  --brand-slate: #6B7380;
+  --brand-light-gray: #F1F3F5;
+  --brand-white: #FFFFFF;
+
+  /* Tema Escuro (Padrão Executivo) */
+  --bg-app: #0A1626;
+  --bg-aside: #0E1E33;
+  --bg-surface: #132742;
+  --bg-surface-alt: #193252;
+  --bg-interactive: #1E3B60;
+
+  --text-primary: #FFFFFF;
+  --text-secondary: #D4DEE9;
+  --text-muted: #9FB0C4;
+
+  --accent-primary: #D4A72E;
+  --accent-on-primary: #0E1E33;
+  --accent-secondary: #5CE1E6;
+
+  --border-subtle: #254166;
+  --border-strong: #486A94;
+  --focus-ring: #D4A72E;
+
+  /* Cores de Status com Contraste Seguro */
+  --badge-ok-bg: rgba(16, 185, 129, 0.18);
+  --badge-ok-text: #6EE7B7;
+  --badge-ok-border: #34D399;
+
+  --badge-alert-bg: rgba(244, 63, 94, 0.18);
+  --badge-alert-text: #FDA4AF;
+  --badge-alert-border: #FB7185;
+
+  --badge-warn-bg: rgba(212, 167, 46, 0.2);
+  --badge-warn-text: #FDE047;
+  --badge-warn-border: #D4A72E;
+
+  --badge-info-bg: rgba(15, 92, 110, 0.5);
+  --badge-info-text: #7DD3FC;
+  --badge-info-border: #38BDF8;
+
+  /* Dimensões e Tipografia */
+  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --sticky-header-height: 5.25rem;
+  --aside-width: 280px;
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 14px;
+  --shadow-card: 0 8px 24px rgba(0, 0, 0, 0.28);
+  --transition-ui: 160ms ease;
+}
+
+[data-theme="light"] {
+  --bg-app: #F1F3F5;
+  --bg-aside: #FFFFFF;
+  --bg-surface: #FFFFFF;
+  --bg-surface-alt: #F8FAFC;
+  --bg-interactive: #E6ECF2;
+
+  --text-primary: #0E1E33;
+  --text-secondary: #334155;
+  --text-muted: #525B69;
+
+  --accent-primary: #8A6200;
+  --accent-on-primary: #0E1E33;
+  --accent-secondary: #0F5C6E;
+
+  --border-subtle: #CBD5E1;
+  --border-strong: #6B7380;
+  --focus-ring: #0F5C6E;
+
+  --badge-ok-bg: #D1FAE5;
+  --badge-ok-text: #065F46;
+  --badge-ok-border: #059669;
+
+  --badge-alert-bg: #FFE4E6;
+  --badge-alert-text: #9F1239;
+  --badge-alert-border: #E11D48;
+
+  --badge-warn-bg: #FEF3C7;
+  --badge-warn-text: #78350F;
+  --badge-warn-border: #B45309;
+
+  --badge-info-bg: #E0F2FE;
+  --badge-info-text: #0E1E33;
+  --badge-info-border: #0F5C6E;
+
+  --shadow-card: 0 4px 16px rgba(14, 30, 51, 0.07);
+}
