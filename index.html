@@ -1,0 +1,2427 @@
+<!doctype html>
+<html lang="pt-BR" data-theme="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+    <title>
+      Taranis Black | Painel Executivo — Finanças e
+      Operações
+    </title>
+    <link rel="stylesheet" href="./css/style.css" />
+  </head>
+  <body>
+    <a href="#main-content" class="skip-link"
+      >Pular para o conteúdo principal</a
+    >
+    <div
+      id="sr-live-announcer"
+      class="sr-only"
+      aria-live="polite"
+      aria-atomic="true"
+    ></div>
+
+    <!-- ======================================================================
+      HEADER: Identidade Taranis Black e Controles Globais da Apresentação
+      ====================================================================== -->
+    <header class="site-header" role="banner">
+      <div class="header-inner">
+        <div class="header-brand">
+          <img
+            id="taranis-header-logo"
+            src="./assets/images/Logotipo_TARANIS-dark.png"
+            data-logo-dark="./assets/images/Logotipo_TARANIS-dark.png"
+            data-logo-light="./assets/images/Logotipo_TARANIS-light.png"
+            alt="Logotipo Taranis Black"
+            class="taranis-logo"
+          />
+          <div class="header-titles">
+            <h1>
+              Painel Executivo &mdash; Finanças e Operações
+            </h1>
+            <p class="header-subtitle">
+              <span
+                >Diagnóstico Estratégico e Recomendações
+                para a CEO</span
+              >
+              <span class="sim-tag"
+                >Caso acadêmico &middot; Dados
+                simulados</span
+              >
+            </p>
+          </div>
+        </div>
+
+        <div
+          class="header-actions"
+          role="toolbar"
+          aria-label="Ações de visualização do painel"
+        >
+          <button
+            type="button"
+            id="btn-return-exec"
+            class="btn-header btn-header-gold"
+            title="Voltar imediatamente para a Visão Executiva"
+          >
+            <span aria-hidden="true">&#8962;</span>
+            <span>Visão Executiva</span>
+          </button>
+
+          <button
+            type="button"
+            id="btn-theme-toggle"
+            class="btn-header"
+            aria-pressed="false"
+            aria-label="Alternar entre Modo Escuro e Modo Claro"
+          >
+            <span aria-hidden="true">&#9680;</span>
+            <span id="theme-btn-text">Modo Escuro</span>
+          </button>
+
+          <button
+            type="button"
+            id="btn-fullscreen-toggle"
+            class="btn-header"
+            aria-pressed="false"
+            aria-label="Alternar apresentação em tela cheia"
+          >
+            <span aria-hidden="true">&#x26F6;</span>
+            <span>Tela Cheia</span>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <!-- ======================================================================
+      WORKSPACE: ASIDE (Menu de 7 Páginas) + MAIN (Conteúdo Executivo)
+      ====================================================================== -->
+    <div class="app-workspace">
+      <!-- ASIDE: Navegação Principal pelas 7 Páginas Executivas -->
+      <aside
+        class="site-aside"
+        aria-label="Menu principal do dashboard"
+      >
+        <div>
+          <p class="aside-section-label">
+            Menu de Navegação
+          </p>
+          <div
+            class="aside-nav-list"
+            role="tablist"
+            aria-orientation="vertical"
+            aria-label="Páginas da apresentação executiva"
+          >
+            <button
+              type="button"
+              role="tab"
+              id="tab-visao-executiva"
+              class="aside-tab-btn"
+              aria-selected="true"
+              aria-controls="panel-visao-executiva"
+              data-target="visao-executiva"
+              tabindex="0"
+            >
+              <span class="aside-tab-num" aria-hidden="true"
+                >1</span
+              >
+              <span class="aside-tab-text">
+                <span class="aside-tab-title"
+                  >Visão Executiva</span
+                >
+                <span class="aside-tab-sub"
+                  >Resumo e conclusões</span
+                >
+              </span>
+            </button>
+
+            <button
+              type="button"
+              role="tab"
+              id="tab-indicadores"
+              class="aside-tab-btn"
+              aria-selected="false"
+              aria-controls="panel-indicadores"
+              data-target="indicadores"
+              tabindex="-1"
+            >
+              <span class="aside-tab-num" aria-hidden="true"
+                >2</span
+              >
+              <span class="aside-tab-text">
+                <span class="aside-tab-title"
+                  >Indicadores</span
+                >
+                <span class="aside-tab-sub"
+                  >Dados financeiros e operacionais</span
+                >
+              </span>
+            </button>
+
+            <button
+              type="button"
+              role="tab"
+              id="tab-diagnostico"
+              class="aside-tab-btn"
+              aria-selected="false"
+              aria-controls="panel-diagnostico"
+              data-target="diagnostico"
+              tabindex="-1"
+            >
+              <span class="aside-tab-num" aria-hidden="true"
+                >3</span
+              >
+              <span class="aside-tab-text">
+                <span class="aside-tab-title"
+                  >Diagnóstico</span
+                >
+                <span class="aside-tab-sub"
+                  >Gargalos e impactos no EBITDA</span
+                >
+              </span>
+            </button>
+
+            <button
+              type="button"
+              role="tab"
+              id="tab-sipoc-ishikawa"
+              class="aside-tab-btn"
+              aria-selected="false"
+              aria-controls="panel-sipoc-ishikawa"
+              data-target="sipoc-ishikawa"
+              tabindex="-1"
+            >
+              <span class="aside-tab-num" aria-hidden="true"
+                >4</span
+              >
+              <span class="aside-tab-text">
+                <span class="aside-tab-title"
+                  >SIPOC e Ishikawa</span
+                >
+                <span class="aside-tab-sub"
+                  >Processos e causas raiz (6M)</span
+                >
+              </span>
+            </button>
+
+            <button
+              type="button"
+              role="tab"
+              id="tab-solucoes-ia"
+              class="aside-tab-btn"
+              aria-selected="false"
+              aria-controls="panel-solucoes-ia"
+              data-target="solucoes-ia"
+              tabindex="-1"
+            >
+              <span class="aside-tab-num" aria-hidden="true"
+                >5</span
+              >
+              <span class="aside-tab-text">
+                <span class="aside-tab-title"
+                  >Soluções com IA</span
+                >
+                <span class="aside-tab-sub"
+                  >Recomendações e priorização</span
+                >
+              </span>
+            </button>
+
+            <button
+              type="button"
+              role="tab"
+              id="tab-comparativos"
+              class="aside-tab-btn"
+              aria-selected="false"
+              aria-controls="panel-comparativos"
+              data-target="comparativos"
+              tabindex="-1"
+            >
+              <span class="aside-tab-num" aria-hidden="true"
+                >6</span
+              >
+              <span class="aside-tab-text">
+                <span class="aside-tab-title"
+                  >Comparativos</span
+                >
+                <span class="aside-tab-sub"
+                  >Estado Atual &times; Projeção</span
+                >
+              </span>
+            </button>
+
+            <button
+              type="button"
+              role="tab"
+              id="tab-plano-acao"
+              class="aside-tab-btn"
+              aria-selected="false"
+              aria-controls="panel-plano-acao"
+              data-target="plano-acao"
+              tabindex="-1"
+            >
+              <span class="aside-tab-num" aria-hidden="true"
+                >7</span
+              >
+              <span class="aside-tab-text">
+                <span class="aside-tab-title"
+                  >Plano de Ação</span
+                >
+                <span class="aside-tab-sub"
+                  >Governança, etapas e Fase 2</span
+                >
+              </span>
+            </button>
+          </div>
+        </div>
+
+        <div
+          class="aside-context-box"
+          aria-label="Contexto corporativo da Taranis Black"
+        >
+          <strong>Cenário Taranis Black</strong>
+          <span
+            >Ergonomia Corporativa (Cadeiras, Mesas
+            Elétricas e Cabines Acústicas)</span
+          >
+          <ul class="aside-context-list">
+            <li>Faturamento: ~R$ 48,5 mi/ano</li>
+            <li>Equipe: 280 colaboradores</li>
+            <li>Crescimento: +35% a.a. (3 anos)</li>
+            <li>Operação: Processos manuais</li>
+          </ul>
+        </div>
+      </aside>
+
+      <!-- MAIN: Área Central de Apresentação e Tomada de Decisão -->
+      <main
+        id="main-content"
+        class="site-main"
+        tabindex="-1"
+      >
+        <!-- ==================================================================
+          PÁGINA 1: VISÃO EXECUTIVA (Completa nesta Parte 1)
+          ================================================================== -->
+        <section
+          id="panel-visao-executiva"
+          class="page-panel"
+          role="tabpanel"
+          aria-labelledby="tab-visao-executiva"
+        >
+          <div class="page-hero-banner">
+            <span class="page-eyebrow"
+              >1. Visão Executiva &middot; Síntese para
+              Tomada de Decisão</span
+            >
+            <h2>Crescer com Controle e Rentabilidade</h2>
+            <p class="page-hero-lead">
+              A Taranis Black atingiu o faturamento previsto
+              no orçamento (<strong>R$ 48,5 milhões</strong
+              >), mas encerrou o exercício com EBITDA de
+              <strong>R$ 5,8 milhões</strong> &mdash; uma
+              retração de
+              <strong>41% (gap de R$ 4,08 milhões)</strong>
+              provocada por gargalos operacionais em
+              processos manuais durante a expansão de 35% ao
+              ano.
+            </p>
+          </div>
+
+          <!-- 4 Cards de KPIs Executivos Clicáveis -->
+          <div
+            class="kpi-grid"
+            role="group"
+            aria-label="Indicadores executivos principais — clique para detalhar"
+          >
+            <button
+              type="button"
+              class="kpi-card-btn"
+              data-kpi-id="kpi-receita"
+              aria-expanded="false"
+              aria-controls="kpi-detail-drawer"
+            >
+              <div class="kpi-card-top">
+                <span class="kpi-card-label"
+                  >Receita Bruta Anual</span
+                >
+                <span class="exec-badge exec-badge-ok"
+                  >No Orçamento</span
+                >
+              </div>
+              <div class="kpi-card-value">R$ 48,5 mi</div>
+              <div class="kpi-card-comp">
+                <span>Orçado: R$ 48,6 mi (-0,2%)</span>
+                <span class="kpi-click-hint"
+                  >Detalhar &rarr;</span
+                >
+              </div>
+            </button>
+
+            <button
+              type="button"
+              class="kpi-card-btn"
+              data-kpi-id="kpi-ebitda"
+              aria-expanded="true"
+              aria-controls="kpi-detail-drawer"
+            >
+              <div class="kpi-card-top">
+                <span class="kpi-card-label"
+                  >EBITDA Realizado</span
+                >
+                <span class="exec-badge exec-badge-alert"
+                  >-41% vs. Orçado</span
+                >
+              </div>
+              <div class="kpi-card-value">R$ 5,8 mi</div>
+              <div class="kpi-card-comp">
+                <span
+                  >Orçado: R$ 9,8 mi (R$ 5,77 mi
+                  exatos)</span
+                >
+                <span class="kpi-click-hint"
+                  >Detalhar &rarr;</span
+                >
+              </div>
+            </button>
+
+            <button
+              type="button"
+              class="kpi-card-btn"
+              data-kpi-id="kpi-gap"
+              aria-expanded="false"
+              aria-controls="kpi-detail-drawer"
+            >
+              <div class="kpi-card-top">
+                <span class="kpi-card-label"
+                  >Gap Anual de EBITDA</span
+                >
+                <span class="exec-badge exec-badge-warn"
+                  >85% em 5 Linhas</span
+                >
+              </div>
+              <div class="kpi-card-value">R$ 4,08 mi</div>
+              <div class="kpi-card-comp">
+                <span
+                  >R$ 3,48 mi em desvios operacionais</span
+                >
+                <span class="kpi-click-hint"
+                  >Detalhar &rarr;</span
+                >
+              </div>
+            </button>
+
+            <button
+              type="button"
+              class="kpi-card-btn"
+              data-kpi-id="kpi-potencial"
+              aria-expanded="false"
+              aria-controls="kpi-detail-drawer"
+            >
+              <div class="kpi-card-top">
+                <span class="kpi-card-label"
+                  >Potencial (3 Iniciativas)</span
+                >
+                <span class="exec-badge exec-badge-info"
+                  >Hipótese a Validar</span
+                >
+              </div>
+              <div class="kpi-card-value">
+                &approx; R$ 1,0 mi/ano
+              </div>
+              <div class="kpi-card-comp">
+                <span>Endereça ~25% do gap anual</span>
+                <span class="kpi-click-hint"
+                  >Detalhar &rarr;</span
+                >
+              </div>
+            </button>
+          </div>
+
+          <!-- Gaveta de Detalhamento do KPI Clicado -->
+          <div
+            id="kpi-detail-drawer"
+            class="kpi-detail-drawer"
+            role="region"
+            aria-live="polite"
+            aria-label="Detalhamento executivo do indicador selecionado"
+          >
+            <div class="kpi-detail-header">
+              <h3 id="kpi-detail-title">
+                Compressão Severa da Rentabilidade
+                Operacional (-41,4%)
+              </h3>
+              <span
+                id="kpi-detail-category"
+                class="exec-badge exec-badge-info"
+                >Dado Real (DRE)</span
+              >
+            </div>
+            <p
+              id="kpi-detail-text"
+              class="kpi-detail-body"
+            ></p>
+            <div
+              id="kpi-detail-metrics"
+              class="kpi-detail-metrics"
+            ></div>
+          </div>
+
+          <!-- Duas Colunas: Resumo Executivo à CEO + Principais Desvios e Decisão -->
+          <div class="exec-two-col">
+            <!-- Coluna 1: Carta Executiva à CEO (15 Linhas Oficiais) -->
+            <article
+              class="exec-panel-card"
+              aria-labelledby="heading-memo-ceo"
+            >
+              <div>
+                <h3 id="heading-memo-ceo">
+                  <span>Resumo Executivo para a CEO</span>
+                  <span class="exec-badge exec-badge-info"
+                    >Comunicação Direta</span
+                  >
+                </h3>
+                <div class="ceo-memo-box">
+                  <p class="ceo-memo-subject">
+                    Assunto: Taranis Black | Diagnóstico e
+                    plano de IA para Finanças e Operações
+                  </p>
+                  <p><strong>Prezada CEO,</strong></p>
+                  <p>
+                    A Taranis Black atingiu o faturamento
+                    previsto (R$ 48,5 milhões), mas
+                    registrou EBITDA de R$ 5,8 milhões, 41%
+                    abaixo da projeção de R$ 9,8 milhões.
+                  </p>
+                  <p>
+                    Cerca de R$ 3,5 milhões desse desvio vêm
+                    de gargalos operacionais, agravados pelo
+                    crescimento de 35% ao ano e por
+                    processos manuais, planilhas e um ERP
+                    sem integração.
+                  </p>
+                  <p>
+                    Os desvios estão na aprovação de crédito
+                    (até 48h; meta 4h), no ciclo
+                    proposta-expedição (mais de 5 dias
+                    úteis; meta 24h) e no fechamento (7 dias
+                    úteis; meta 2 dias).
+                  </p>
+                  <p>
+                    Propomos IA e automação para agilizar a
+                    análise de crédito, integrar propostas e
+                    pedidos, automatizar a conciliação
+                    financeira e monitorar indicadores e
+                    cobranças.
+                  </p>
+                  <p>
+                    O impacto esperado inclui reduzir de
+                    6,8% para menos de 0,5% as
+                    inconsistências de faturamento e
+                    <strong>endereçar</strong> até R$ 3,9
+                    milhões/ano em perdas e custos, a
+                    validar.
+                  </p>
+                  <p>
+                    Próximo passo: validar os dados com a
+                    Controladoria e iniciar pelo piloto de
+                    crédito, de melhor relação esforço
+                    &times; impacto (R$ 1,25 milhão/ano em
+                    pedidos cancelados).
+                  </p>
+                  <p class="ceo-memo-closing">
+                    Cordialmente,<br />Consultoria de IA
+                    para Finanças e Operações
+                  </p>
+                </div>
+              </div>
+            </article>
+
+            <!-- Coluna 2: Os 3 Gargalos Operacionais e Decisão Recomendada -->
+            <article
+              class="exec-panel-card"
+              aria-labelledby="heading-conclusoes-ceo"
+            >
+              <div>
+                <h3 id="heading-conclusoes-ceo">
+                  <span
+                    >Onde a Operação Trava &amp; Decisão
+                    Prioritária</span
+                  >
+                  <span class="exec-badge exec-badge-warn"
+                    >Foco de Ação</span
+                  >
+                </h3>
+
+                <div class="bottleneck-list">
+                  <div class="bottleneck-item">
+                    <div class="bottleneck-item-top">
+                      <strong
+                        >1. Aprovação de Crédito B2B</strong
+                      >
+                      <span class="bottleneck-metric-pill"
+                        >Atual: 24 a 48h úteis &middot;
+                        Meta: 4h</span
+                      >
+                    </div>
+                    <p>
+                      Cada pedido exige 40 min de triagem
+                      manual (Serasa, ERP e planilha) e
+                      aguarda e-mail do Gerente Financeiro,
+                      sem alçada automática nem para pedidos
+                      de R$ 8 mil.
+                    </p>
+                  </div>
+
+                  <div class="bottleneck-item">
+                    <div class="bottleneck-item-top">
+                      <strong
+                        >2. Ciclo do Pedido (Proposta &rarr;
+                        Expedição)</strong
+                      >
+                      <span class="bottleneck-metric-pill"
+                        >Atual: &gt; 5 dias úteis &middot;
+                        Meta: 24h</span
+                      >
+                    </div>
+                    <p>
+                      Propostas em PDF sem validação na
+                      origem são redigitadas no ERP, gerando
+                      <strong
+                        >6,8% de divergência em
+                        boletos</strong
+                      >
+                      (meta &lt; 0,5%), reentregas e
+                      travamento no CD.
+                    </p>
+                  </div>
+
+                  <div class="bottleneck-item">
+                    <div class="bottleneck-item-top">
+                      <strong
+                        >3. Fechamento Contábil Mensal
+                        (Processo Distinto)</strong
+                      >
+                      <span class="bottleneck-metric-pill"
+                        >Atual: 7 dias úteis &middot; Meta:
+                        2 dias</span
+                      >
+                    </div>
+                    <p>
+                      Atraso de 5 dias úteis na conciliação
+                      manual de 3 planilhas com o ERP
+                      legado, gerando sobrecarga na equipe e
+                      atraso na visibilidade executiva dos
+                      resultados.
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="decision-callout">
+                <h4>
+                  Decisão Recomendada: Iniciar pelo Piloto
+                  de Crédito Assistido (Prioridade 1)
+                </h4>
+                <p>
+                  Menor esforço técnico (nota 2/5) e alto
+                  impacto (4/5): aprova por regra pedidos
+                  sem divergência até
+                  <strong>R$ 15 mil</strong> (premissa) e
+                  encaminha qualquer exceção para decisão
+                  humana em até <strong>4h úteis</strong>,
+                  retendo ≈ R$ 119 mil/ano de margem e
+                  liberando 90 a 110 h/mês de triagem
+                  (hipóteses a validar no piloto).
+                </p>
+                <div class="decision-actions">
+                  <button
+                    type="button"
+                    class="btn-exec-action btn-exec-primary"
+                    data-jump-page="indicadores"
+                  >
+                    <span>Explorar Indicadores Atuais</span>
+                    <span aria-hidden="true">&rarr;</span>
+                  </button>
+                  <button
+                    type="button"
+                    class="btn-exec-action"
+                    data-jump-page="comparativos"
+                  >
+                    <span
+                      >Ver Estado Atual &times;
+                      Projeção</span
+                    >
+                  </button>
+                </div>
+              </div>
+            </article>
+          </div>
+        </section>
+
+        <!-- ==================================================================
+          PÁGINAS 2 A 7: Módulos das Próximas Etapas de Construção
+          ================================================================== -->
+        <!-- ==================================================================
+          PÁGINA 2: INDICADORES (Completa nesta Parte 2 — Dados Atuais AS-IS)
+          ================================================================== -->
+        <section
+          id="panel-indicadores"
+          class="page-panel"
+          role="tabpanel"
+          aria-labelledby="tab-indicadores"
+          hidden
+        >
+          <div class="page-hero-banner">
+            <span class="page-eyebrow"
+              >2. Indicadores &middot; Dados Financeiros e
+              Operacionais Atuais (AS-IS)</span
+            >
+            <h2>
+              Desempenho Financeiro por Trimestre, Linhas de
+              Produto e DRE Completo
+            </h2>
+            <p class="page-hero-lead">
+              Enquanto a Receita Bruta atingiu
+              <strong>R$ 48,50 milhões</strong> (-0,2% vs.
+              orçado), a Margem EBITDA recuou de
+              <strong>16,4% no T1 para 7,5% no T4</strong>,
+              reduzindo o EBITDA anual a
+              <strong>R$ 5,77 milhões</strong> (-41,4%) e o
+              Lucro Líquido a
+              <strong>R$ 3,11 milhões</strong> (-47,9%).
+            </p>
+          </div>
+
+          <!-- Bloco 1: Evolução Trimestral da Margem EBITDA + Seletor de Trimestre -->
+          <article
+            class="exec-panel-card"
+            style="margin-bottom: 1.5rem"
+            aria-labelledby="heading-ind-trimestral"
+          >
+            <div class="filter-toolbar">
+              <h3
+                id="heading-ind-trimestral"
+                style="margin: 0; border: none; padding: 0"
+              >
+                Evolução Trimestral da Margem EBITDA (T1 a
+                T4: Orçado vs. Realizado)
+              </h3>
+              <div
+                class="filter-btn-group"
+                role="group"
+                aria-label="Filtrar resumo financeiro por trimestre"
+              >
+                <button
+                  type="button"
+                  class="btn-filter-pill btn-quarter-select"
+                  data-period="ANUAL"
+                  aria-pressed="true"
+                >
+                  Anual Consolidado
+                </button>
+                <button
+                  type="button"
+                  class="btn-filter-pill btn-quarter-select"
+                  data-period="T1"
+                  aria-pressed="false"
+                >
+                  1º Trim (T1)
+                </button>
+                <button
+                  type="button"
+                  class="btn-filter-pill btn-quarter-select"
+                  data-period="T2"
+                  aria-pressed="false"
+                >
+                  2º Trim (T2)
+                </button>
+                <button
+                  type="button"
+                  class="btn-filter-pill btn-quarter-select"
+                  data-period="T3"
+                  aria-pressed="false"
+                >
+                  3º Trim (T3)
+                </button>
+                <button
+                  type="button"
+                  class="btn-filter-pill btn-quarter-select"
+                  data-period="T4"
+                  aria-pressed="false"
+                >
+                  4º Trim (T4)
+                </button>
+              </div>
+            </div>
+
+            <div class="chart-split-grid">
+              <div>
+                <div
+                  id="svg-quarterly-margin-container"
+                  class="svg-chart-wrapper"
+                ></div>
+                <div
+                  class="chart-legend-row"
+                  aria-label="Legenda do gráfico"
+                >
+                  <span class="legend-item"
+                    ><span
+                      class="legend-swatch-orcado"
+                      aria-hidden="true"
+                    ></span>
+                    Margem EBITDA Orçada (&square; 19,7% a
+                    20,9%)</span
+                  >
+                  <span class="legend-item"
+                    ><span
+                      class="legend-swatch-realizado"
+                      aria-hidden="true"
+                    ></span>
+                    Margem EBITDA Realizada (&bull; 16,4%
+                    &rarr; 7,5%)</span
+                  >
+                </div>
+              </div>
+
+              <div
+                class="quarter-spotlight-card"
+                role="region"
+                aria-live="polite"
+                aria-label="Resumo do período selecionado"
+              >
+                <div>
+                  <h4 id="q-spotlight-title">
+                    Consolidado Anual (T1 a T4)
+                  </h4>
+                  <div
+                    id="q-spotlight-stats"
+                    class="quarter-stat-list"
+                  ></div>
+                </div>
+                <p
+                  id="q-spotlight-insight"
+                  class="quarter-insight-box"
+                ></p>
+              </div>
+            </div>
+          </article>
+
+          <!-- Bloco 2: Desempenho por Linha de Produto (Aba 2) -->
+          <article
+            class="exec-panel-card"
+            style="margin-bottom: 1.5rem"
+            aria-labelledby="heading-ind-produtos"
+          >
+            <h3 id="heading-ind-produtos">
+              <span
+                >Receita, Margem Bruta e Gargalos por Linha
+                de Produto</span
+              >
+              <span class="exec-badge exec-badge-info"
+                >4 Linhas de Produto</span
+              >
+            </h3>
+            <div id="product-lines-container"></div>
+            <p
+              style="
+                margin: 0.5rem 0 0 0;
+                font-size: 0.8rem;
+                color: var(--text-muted);
+              "
+            >
+              <strong>Nota de conciliação contábil:</strong>
+              O DRE (R$ 48,50 mi realizados e margem bruta
+              de 38,0% sobre a receita bruta) é adotado como
+              fonte oficial de verdade; a abertura gerencial
+              por linha de produto soma R$ 47,40 mi
+              realizados.
+            </p>
+          </article>
+
+          <!-- Bloco 3: Tabela Interativa do DRE (Aba 1 - 22 linhas) -->
+          <article
+            class="exec-panel-card"
+            aria-labelledby="heading-ind-dre"
+          >
+            <div class="filter-toolbar">
+              <h3
+                id="heading-ind-dre"
+                style="margin: 0; border: none; padding: 0"
+              >
+                Demonstração do Resultado do Exercício (DRE
+                Orçado vs. Realizado)
+              </h3>
+              <div
+                class="filter-btn-group"
+                role="group"
+                aria-label="Filtrar linhas da tabela do DRE"
+              >
+                <button
+                  type="button"
+                  class="btn-filter-pill btn-dre-filter"
+                  data-dre-mode="all"
+                  aria-pressed="true"
+                >
+                  DRE Completo (22 linhas)
+                </button>
+                <button
+                  type="button"
+                  class="btn-filter-pill btn-dre-filter"
+                  data-dre-mode="summary"
+                  aria-pressed="false"
+                >
+                  Apenas Subtotais e Totais
+                </button>
+                <button
+                  type="button"
+                  class="btn-filter-pill btn-dre-filter"
+                  data-dre-mode="critical"
+                  aria-pressed="false"
+                >
+                  Linhas com Desvio Crítico
+                </button>
+              </div>
+            </div>
+            <div id="dre-table-container"></div>
+          </article>
+        </section>
+
+        <!-- ==================================================================
+          PÁGINA 3: DIAGNÓSTICO (Completa nesta Parte 2 — Gargalos e Gap)
+          ================================================================== -->
+        <section
+          id="panel-diagnostico"
+          class="page-panel"
+          role="tabpanel"
+          aria-labelledby="tab-diagnostico"
+          hidden
+        >
+          <div class="page-hero-banner">
+            <span class="page-eyebrow"
+              >3. Diagnóstico &middot; Gargalos, Impactos e
+              Decomposição do Resultado</span
+            >
+            <h2>
+              Onde Estão os R$ 4,08 milhões de Gap no EBITDA
+            </h2>
+            <p class="page-hero-lead">
+              O diagnóstico financeiro e operacional
+              comprova que
+              <strong
+                >85,3% do gap anual de EBITDA (R$ 3,48
+                milhões)</strong
+              >
+              concentram-se em cinco linhas de custo e perda
+              operacional, enquanto despesas comerciais,
+              marketing e impostos permaneceram sob
+              controle.
+            </p>
+          </div>
+
+          <!-- Bloco 1: Decomposição do Gap de R$ 4,08 mi em Barras Proporcionais -->
+          <article
+            class="exec-panel-card"
+            style="margin-bottom: 1.5rem"
+            aria-labelledby="heading-diag-gap"
+          >
+            <h3 id="heading-diag-gap">
+              <span
+                >Decomposição do Gap Anual de EBITDA (R$
+                4,08 milhões)</span
+              >
+              <span class="exec-badge exec-badge-alert"
+                >Top 5 Linhas = R$ 3,48 mi (85,3%)</span
+              >
+            </h3>
+            <div id="gap-decomposition-container"></div>
+          </article>
+
+          <!-- Bloco 2: Escalada das Anomalias Críticas do T1 ao T4 -->
+          <article
+            class="exec-panel-card"
+            style="margin-bottom: 1.5rem"
+            aria-labelledby="heading-diag-anomalias"
+          >
+            <h3 id="heading-diag-anomalias">
+              <span
+                >Escalada Trimestral das Anomalias de Custo
+                (T1 &rarr; T4 como % da Receita Bruta)</span
+              >
+              <span class="exec-badge exec-badge-warn"
+                >Agravamento no 2º Semestre</span
+              >
+            </h3>
+            <p
+              style="
+                margin: 0 0 0.85rem 0;
+                font-size: 0.88rem;
+                color: var(--text-secondary);
+              "
+            >
+              Todas as cinco linhas críticas apresentaram
+              desvio crescente em todos os trimestres e
+              superaram +20% de estouro no T4, comprimindo a
+              margem EBITDA para 7,5% no fechamento do ano:
+            </p>
+            <div id="anomalies-table-container"></div>
+          </article>
+
+          <!-- Bloco 3: Os 5 Gargalos Operacionais Mapeados (Aba 3) + Alerta de Sobreposição -->
+          <article
+            class="exec-panel-card"
+            style="margin-bottom: 1.5rem"
+            aria-labelledby="heading-diag-gargalos"
+          >
+            <h3 id="heading-diag-gargalos">
+              <span
+                >Gargalos Operacionais e Custos Estimados no
+                Levantamento Interno</span
+              >
+              <span class="exec-badge exec-badge-info"
+                >5 Indicadores Críticos</span
+              >
+            </h3>
+            <div id="gargalos-aba3-container"></div>
+            <div
+              class="quarter-insight-box"
+              style="margin-top: 0.9rem"
+            >
+              <strong
+                >Atenção executiva (evitar dupla
+                contagem):</strong
+              >
+              A soma nominal dos cinco itens acima (<strong
+                >R$ 3,89 milhões/ano</strong
+              >) representa a exposição bruta mapeada e
+              <strong
+                >não deve ser lida como economia líquida
+                direta no EBITDA</strong
+              >, pois mistura receita bruta de pedidos
+              cancelados (R$ 1,25 mi, cujo efeito no
+              resultado é a margem sobre ela), provisão
+              total de PDD (R$ 1,11 mi) e custos
+              operacionais que se sobrepõem às linhas do
+              DRE.
+            </div>
+          </article>
+
+          <!-- Bloco 4: Distinção Estrutural entre Processos (Aprovação de Pedidos vs. Conciliação) -->
+          <article
+            class="exec-panel-card"
+            aria-labelledby="heading-diag-distincao"
+          >
+            <h3 id="heading-diag-distincao">
+              <span
+                >Distinção Estrutural: Aprovação de Pedidos
+                &ne; Conciliação Financeira</span
+              >
+              <span class="exec-badge exec-badge-info"
+                >Separação de Escopo</span
+              >
+            </h3>
+            <p
+              style="
+                margin: 0 0 1rem 0;
+                font-size: 0.88rem;
+                color: var(--text-secondary);
+              "
+            >
+              Embora ambos mencionem o número &ldquo;5
+              dias&rdquo;, tratam-se de dois processos
+              distintos com naturezas, sistemas e métricas
+              diferentes:
+            </p>
+
+            <div class="process-distinction-grid">
+              <div class="process-dist-card primary-scope">
+                <span class="exec-badge exec-badge-warn"
+                  >Foco do SIPOC, Ishikawa e Piloto (Caso
+                  1)</span
+                >
+                <h4>
+                  Fluxo de Aprovação de Pedidos até a
+                  Expedição
+                </h4>
+                <p class="process-dist-meta">
+                  <strong>Medida:</strong> Ciclo superior a
+                  <strong
+                    >5 dias úteis de duração total</strong
+                  >
+                  (Meta: máximo de 24h úteis).
+                </p>
+                <ul class="process-dist-list">
+                  <li>
+                    <strong>Natureza:</strong> Comercial,
+                    análise de crédito e faturamento
+                    operacional.
+                  </li>
+                  <li>
+                    <strong>Sistemas envolvidos:</strong>
+                    PDF por e-mail, Serasa, ERP legado,
+                    planilha de limites e aprovação por
+                    e-mail.
+                  </li>
+                  <li>
+                    <strong>Dores medidas:</strong> 40 min
+                    de triagem manual por pedido, 24 a 48h
+                    úteis de espera pelo Gerente Financeiro
+                    e 6,8% de divergência em boletos
+                    emitidos.
+                  </li>
+                </ul>
+              </div>
+
+              <div class="process-dist-card">
+                <span class="exec-badge exec-badge-info"
+                  >Processo de Back-Office (Endereçado na
+                  Onda 2 &mdash; Caso 3)</span
+                >
+                <h4>
+                  Conciliação Financeira e Fechamento Mensal
+                </h4>
+                <p class="process-dist-meta">
+                  <strong>Medida:</strong> Fechamento em
+                  <strong>7 dias úteis</strong>, gerando
+                  <strong>5 dias úteis de atraso</strong>
+                  (Meta: 2 dias úteis).
+                </p>
+                <ul class="process-dist-list">
+                  <li>
+                    <strong>Natureza:</strong> Fechamento
+                    contábil mensal e controladoria.
+                  </li>
+                  <li>
+                    <strong>Sistemas envolvidos:</strong>
+                    Cruzamento manual entre 3 planilhas
+                    Excel e o ERP legado sem integração.
+                  </li>
+                  <li>
+                    <strong>Dores medidas:</strong> R$ 180
+                    mil/ano estimados em horas extras e
+                    auditorias, sobrecarga da equipe
+                    financeira e visibilidade tardia dos
+                    desvios de margem.
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <!-- Acordeão Expansível: Pontos de Validação com a Controladoria -->
+            <button
+              type="button"
+              class="exec-accordion-btn"
+              aria-expanded="false"
+              aria-controls="panel-audit-controladoria"
+            >
+              <span
+                >Ver pontos de divergência entre bases e
+                lacunas mapeadas para validação com a
+                Controladoria</span
+              >
+              <span aria-hidden="true">&#9662;</span>
+            </button>
+            <div
+              id="panel-audit-controladoria"
+              class="exec-accordion-content"
+              hidden
+            >
+              <div
+                id="audit-inconsistencies-container"
+                class="audit-points-grid"
+              ></div>
+            </div>
+          </article>
+        </section>
+
+        <!-- ==================================================================
+          PÁGINA 4: SIPOC E ISHIKAWA (Completa nesta Parte 3)
+          ================================================================== -->
+        <section
+          id="panel-sipoc-ishikawa"
+          class="page-panel"
+          role="tabpanel"
+          aria-labelledby="tab-sipoc-ishikawa"
+          hidden
+        >
+          <div class="page-hero-banner">
+            <span class="page-eyebrow"
+              >4. SIPOC e Ishikawa &middot; Mapeamento Lean
+              de Processos e Causas Raiz (6M)</span
+            >
+            <h2>
+              Por Que o Ciclo do Pedido Supera 5 Dias Úteis
+              (Meta: 24h)
+            </h2>
+            <p class="page-hero-lead">
+              Mapeamos as
+              <strong
+                >6 etapas do fluxo de Aprovação de Pedido,
+                Faturamento e Expedição</strong
+              >
+              (da proposta assinada à transmissão da ordem
+              ao CD de Joinville) e investigamos as causas
+              raiz em seis dimensões (6M), separando
+              sintomas de causas estruturais.
+            </p>
+          </div>
+
+          <!-- Bloco 1: Matriz SIPOC Interativa em 6 Etapas -->
+          <article
+            class="exec-panel-card"
+            style="margin-bottom: 1.5rem"
+            aria-labelledby="heading-sipoc-interactive"
+          >
+            <div class="filter-toolbar">
+              <div>
+                <h3
+                  id="heading-sipoc-interactive"
+                  style="
+                    margin: 0;
+                    border: none;
+                    padding: 0;
+                  "
+                >
+                  Matriz SIPOC Interativa: Fluxo em 6 Etapas
+                  (Meta: 24h úteis &middot; Hoje: &gt; 5
+                  dias úteis)
+                </h3>
+                <p
+                  style="
+                    margin: 0.25rem 0 0 0;
+                    font-size: 0.82rem;
+                    color: var(--text-muted);
+                  "
+                >
+                  Selecione uma etapa abaixo para
+                  inspecionar Fornecedores (S), Entradas
+                  (I), Processo (P), Saídas (O), Clientes
+                  (C) e a camada proposta de IA:
+                </p>
+              </div>
+              <div
+                class="filter-btn-group"
+                role="group"
+                aria-label="Alternar camada de visualização do SIPOC"
+              >
+                <button
+                  type="button"
+                  class="btn-filter-pill btn-sipoc-mode"
+                  data-sipoc-mode="as-is-plus-ia"
+                  aria-pressed="true"
+                >
+                  Diagnóstico AS-IS + Onde a IA Entra
+                </button>
+                <button
+                  type="button"
+                  class="btn-filter-pill btn-sipoc-mode"
+                  data-sipoc-mode="as-is"
+                  aria-pressed="false"
+                >
+                  Apenas Situação Atual (AS-IS)
+                </button>
+                <button
+                  type="button"
+                  class="btn-filter-pill btn-sipoc-mode"
+                  data-sipoc-mode="table"
+                  aria-pressed="false"
+                >
+                  Ver Quadro SIPOC Completo
+                </button>
+              </div>
+            </div>
+
+            <div
+              id="sipoc-stepper-container"
+              class="sipoc-stepper"
+              role="tablist"
+              aria-label="Etapas do fluxo SIPOC"
+            ></div>
+            <div
+              id="sipoc-stage-detail-container"
+              role="region"
+              aria-live="polite"
+              aria-label="Detalhamento da etapa selecionada no SIPOC"
+            ></div>
+          </article>
+
+          <!-- Bloco 2: Diagrama de Ishikawa (6M) em SVG + Cards 6M -->
+          <article
+            class="exec-panel-card"
+            style="margin-bottom: 1.5rem"
+            aria-labelledby="heading-ishikawa-6m"
+          >
+            <div class="filter-toolbar">
+              <div>
+                <h3
+                  id="heading-ishikawa-6m"
+                  style="
+                    margin: 0;
+                    border: none;
+                    padding: 0;
+                  "
+                >
+                  Diagrama de Ishikawa (6M) &mdash; Causas
+                  Raiz (R), Contribuintes (C) e Sintomas (S)
+                </h3>
+                <p
+                  style="
+                    margin: 0.25rem 0 0 0;
+                    font-size: 0.82rem;
+                    color: var(--text-muted);
+                  "
+                >
+                  Filtre pelas categorias abaixo ou clique
+                  diretamente em qualquer espinha do
+                  diagrama para isolar uma dimensão:
+                </p>
+              </div>
+              <div
+                class="filter-btn-group"
+                role="group"
+                aria-label="Filtrar causas no Diagrama de Ishikawa"
+              >
+                <button
+                  type="button"
+                  class="btn-filter-pill btn-ishikawa-filter"
+                  data-ishikawa-filter="all"
+                  aria-pressed="true"
+                >
+                  Todas as Categorias (6M)
+                </button>
+                <button
+                  type="button"
+                  class="btn-filter-pill btn-ishikawa-filter"
+                  data-ishikawa-filter="R"
+                  aria-pressed="false"
+                >
+                  Apenas Causas Raiz [R]
+                </button>
+                <button
+                  type="button"
+                  class="btn-filter-pill btn-ishikawa-filter"
+                  data-ishikawa-filter="top3"
+                  aria-pressed="false"
+                >
+                  Top 3 Críticas + Sustentação
+                </button>
+                <button
+                  type="button"
+                  class="btn-filter-pill btn-ishikawa-filter"
+                  data-ishikawa-filter="S"
+                  aria-pressed="false"
+                >
+                  Isolar Sintomas [S]
+                </button>
+              </div>
+            </div>
+
+            <div
+              id="ishikawa-svg-container"
+              class="svg-chart-wrapper"
+            ></div>
+            <div
+              id="ishikawa-cards-container"
+              class="ishikawa-6m-grid"
+            ></div>
+          </article>
+
+          <!-- Bloco 3: Top 3 Causas Críticas + Causa de Sustentação + 5 Porquês -->
+          <article
+            class="exec-panel-card"
+            aria-labelledby="heading-top3-causes"
+          >
+            <h3 id="heading-top3-causes">
+              <span
+                >Priorização de Causas Raiz: Top 3 Causas
+                Críticas &amp; Causa de Sustentação</span
+              >
+              <span class="exec-badge exec-badge-warn"
+                >Recomendação: Crédito Primeiro</span
+              >
+            </h3>
+            <div
+              id="ishikawa-top3-container"
+              class="top-causes-grid"
+            ></div>
+
+            <div
+              class="quarter-insight-box"
+              style="margin-top: 1.1rem"
+            >
+              <strong
+                >Limite declarado do diagnóstico:</strong
+              >
+              A espera de 24 a 48h úteis na aprovação de
+              crédito explica de 1 a 2 dos mais de 5 dias
+              úteis do ciclo total; os dias restantes não
+              estão decompostos no levantamento atual. Por
+              isso, o piloto já nasce medindo o tempo real
+              de cada etapa para localizar o restante do
+              atraso.
+            </div>
+
+            <button
+              type="button"
+              class="exec-accordion-btn"
+              aria-expanded="false"
+              aria-controls="panel-five-whys"
+            >
+              <span
+                >Ver investigação completa pelas 4 cadeias
+                dos &ldquo;5 Porquês&rdquo; (como separamos
+                sintomas de causas raiz)</span
+              >
+              <span aria-hidden="true">&#9662;</span>
+            </button>
+            <div
+              id="panel-five-whys"
+              class="exec-accordion-content"
+              hidden
+            >
+              <div
+                id="ishikawa-5whys-container"
+                class="whys-list"
+              ></div>
+            </div>
+          </article>
+        </section>
+
+        <!-- ==================================================================
+          PÁGINA 5: SOLUÇÕES COM IA (Completa nesta Parte 4)
+          ================================================================== -->
+        <section
+          id="panel-solucoes-ia"
+          class="page-panel"
+          role="tabpanel"
+          aria-labelledby="tab-solucoes-ia"
+          hidden
+        >
+          <div class="page-hero-banner">
+            <span class="page-eyebrow"
+              >5. Soluções com IA &middot; Recomendações,
+              Supervisão Humana e Priorização</span
+            >
+            <h2>
+              Três Iniciativas Práticas com Supervisão
+              Humana (Human-in-the-Loop)
+            </h2>
+            <p class="page-hero-lead">
+              Recomendamos três aplicações de Inteligência
+              Artificial e automação desenhadas para
+              destravar a aprovação de crédito, eliminar
+              erros de digitação de propostas e acelerar o
+              fechamento contábil &mdash; mantendo a
+              <strong
+                >decisão humana obrigatória em qualquer
+                divergência ou exceção</strong
+              >.
+            </p>
+          </div>
+
+          <!-- Bloco 1: Os 3 Casos de Uso Recomendados + Alternador AI Canvas -->
+          <article
+            class="exec-panel-card"
+            style="margin-bottom: 1.5rem"
+            aria-labelledby="heading-sol-usecases"
+          >
+            <div class="filter-toolbar">
+              <div>
+                <h3
+                  id="heading-sol-usecases"
+                  style="
+                    margin: 0;
+                    border: none;
+                    padding: 0;
+                  "
+                >
+                  As 3 Soluções Propostas (Piloto
+                  Prioritário + Onda 2)
+                </h3>
+                <p
+                  style="
+                    margin: 0.25rem 0 0 0;
+                    font-size: 0.82rem;
+                    color: var(--text-muted);
+                  "
+                >
+                  Alterne entre a visão detalhada em cartões
+                  executivos e o quadro comparativo completo
+                  (AI Canvas):
+                </p>
+              </div>
+              <div
+                class="filter-btn-group"
+                role="group"
+                aria-label="Alternar visualização dos casos de uso"
+              >
+                <button
+                  type="button"
+                  class="btn-filter-pill btn-uc-view-mode"
+                  data-uc-view="cards"
+                  aria-pressed="true"
+                >
+                  Cartões Executivos (3 Iniciativas)
+                </button>
+                <button
+                  type="button"
+                  class="btn-filter-pill btn-uc-view-mode"
+                  data-uc-view="canvas"
+                  aria-pressed="false"
+                >
+                  Comparativo AI Canvas (Tabela Completa)
+                </button>
+              </div>
+            </div>
+
+            <div id="use-cases-main-container"></div>
+          </article>
+
+          <!-- Bloco 2: Regra Central Human-in-the-Loop & Simulador de Cenários de Decisão -->
+          <article
+            class="exec-panel-card"
+            style="margin-bottom: 1.5rem"
+            aria-labelledby="heading-sol-hitl"
+          >
+            <div class="filter-toolbar">
+              <div>
+                <h3
+                  id="heading-sol-hitl"
+                  style="
+                    margin: 0;
+                    border: none;
+                    padding: 0;
+                  "
+                >
+                  Regra Central (Human-in-the-Loop): A IA
+                  Nunca Decide em Divergência
+                </h3>
+                <p
+                  style="
+                    margin: 0.25rem 0 0 0;
+                    font-size: 0.82rem;
+                    color: var(--text-muted);
+                  "
+                >
+                  Selecione um cenário operacional abaixo
+                  para verificar como as regras de alçada, o
+                  SLA de 4h úteis e os canais de comunicação
+                  operam na prática:
+                </p>
+              </div>
+              <div
+                class="filter-btn-group"
+                role="group"
+                aria-label="Simular cenários de decisão Human-in-the-Loop"
+              >
+                <button
+                  type="button"
+                  class="btn-filter-pill btn-hitl-scenario"
+                  data-scen-id="scen-limpo"
+                  aria-pressed="true"
+                >
+                  1. Pedido Limpo (&le; R$ 15 mil)
+                </button>
+                <button
+                  type="button"
+                  class="btn-filter-pill btn-hitl-scenario"
+                  data-scen-id="scen-teto"
+                  aria-pressed="false"
+                >
+                  2. Acima do Teto (&gt; R$ 15 mil)
+                </button>
+                <button
+                  type="button"
+                  class="btn-filter-pill btn-hitl-scenario"
+                  data-scen-id="scen-restricao"
+                  aria-pressed="false"
+                >
+                  3. Sem Histórico / Restrição
+                </button>
+                <button
+                  type="button"
+                  class="btn-filter-pill btn-hitl-scenario"
+                  data-scen-id="scen-pdf"
+                  aria-pressed="false"
+                >
+                  4. Divergência no PDF
+                </button>
+              </div>
+            </div>
+
+            <div
+              id="hitl-simulator-stage-container"
+              role="region"
+              aria-live="polite"
+              aria-label="Resultado da simulação de regra Human-in-the-Loop"
+            ></div>
+
+            <div class="hitl-channel-rules-strip">
+              <div class="channel-rule-card">
+                <strong
+                  >Canal Oficial de Autorização:
+                  Exclusivamente E-mail Corporativo</strong
+                >
+                <p>
+                  Toda autorização de faturamento, dossiê de
+                  exceção e histórico do pedido seguem
+                  exclusivamente por e-mail corporativo,
+                  mantendo registro formal auditável e sem
+                  ramificações informais.
+                </p>
+              </div>
+              <div class="channel-rule-card">
+                <strong
+                  >Uso Restrito do WhatsApp Business
+                  Corporativo</strong
+                >
+                <p>
+                  O WhatsApp Business serve
+                  <strong
+                    >apenas para avisos curtos e
+                    objetivos</strong
+                  >
+                  de que há uma pendência aguardando
+                  análise, sendo estritamente proibido
+                  enviar dados de crédito, score ou valores
+                  sigilosos na mensagem.
+                </p>
+              </div>
+            </div>
+          </article>
+
+          <!-- Bloco 3: Matriz Esforço x Impacto em SVG Interativo -->
+          <article
+            class="exec-panel-card"
+            aria-labelledby="heading-sol-matriz"
+          >
+            <div class="filter-toolbar">
+              <div>
+                <h3
+                  id="heading-sol-matriz"
+                  style="
+                    margin: 0;
+                    border: none;
+                    padding: 0;
+                  "
+                >
+                  Matriz Esforço &times; Impacto e Ordem de
+                  Implantação
+                </h3>
+                <p
+                  style="
+                    margin: 0.25rem 0 0 0;
+                    font-size: 0.82rem;
+                    color: var(--text-muted);
+                  "
+                >
+                  Clique nas bolhas do gráfico (1, 2 ou 3)
+                  ou nos botões ao lado para inspecionar a
+                  relação esforço &times; impacto de cada
+                  frente:
+                </p>
+              </div>
+              <div
+                class="filter-btn-group"
+                role="group"
+                aria-label="Selecionar iniciativa na Matriz Esforço versus Impacto"
+              >
+                <button
+                  type="button"
+                  class="btn-filter-pill btn-matrix-uc-select"
+                  data-uc-id="uc-credito"
+                  aria-pressed="true"
+                >
+                  1º Crédito (4 / 2 &mdash; Piloto)
+                </button>
+                <button
+                  type="button"
+                  class="btn-filter-pill btn-matrix-uc-select"
+                  data-uc-id="uc-propostas"
+                  aria-pressed="false"
+                >
+                  2º Propostas (5 / 4 &mdash; Onda 2)
+                </button>
+                <button
+                  type="button"
+                  class="btn-filter-pill btn-matrix-uc-select"
+                  data-uc-id="uc-conciliacao"
+                  aria-pressed="false"
+                >
+                  3º Conciliação (2 / 3 &mdash; Onda 2)
+                </button>
+              </div>
+            </div>
+
+            <div class="chart-split-grid">
+              <div
+                id="matrix-effort-impact-svg-container"
+                class="svg-chart-wrapper"
+              ></div>
+              <div
+                id="matrix-selected-uc-detail"
+                class="quarter-spotlight-card"
+                role="region"
+                aria-live="polite"
+                aria-label="Detalhamento da iniciativa selecionada na matriz"
+              ></div>
+            </div>
+          </article>
+        </section>
+
+        <!-- ==================================================================
+          PÁGINA 6: COMPARATIVOS (Completa nesta Parte 5 — Atual x Projeção)
+          ================================================================== -->
+        <section
+          id="panel-comparativos"
+          class="page-panel"
+          role="tabpanel"
+          aria-labelledby="tab-comparativos"
+          hidden
+        >
+          <div class="page-hero-banner">
+            <span class="page-eyebrow"
+              >6. Comparativos &middot; Estado Atual &times;
+              Projeção da Consultoria</span
+            >
+            <h2>
+              Potencial de Melhoria, Simulador de Premissas
+              e Cenários do T5
+            </h2>
+            <p class="page-hero-lead">
+              Esta seção compara exclusivamente os
+              indicadores atuais da operação com o cenário
+              futuro estimado pela consultoria (cerca de
+              <strong>R$ 1,0 milhão/ano</strong> para
+              <strong
+                >endereçar ~25% do gap anual de
+                EBITDA</strong
+              >), diferenciando claramente fatos medidos de
+              metas e hipóteses a validar no piloto.
+            </p>
+          </div>
+
+          <!-- Bloco 1: Comparativo de Cenários (Padrão Visual das Imagens 1 e 2) -->
+          <article
+            class="exec-panel-card"
+            style="margin-bottom: 1.5rem"
+            aria-labelledby="heading-comp-toggle"
+          >
+            <div>
+              <h3
+                id="heading-comp-toggle"
+                style="margin-bottom: 0.25rem"
+              >
+                <span
+                  >Comparativo de Cenários: Estado Atual vs.
+                  Futuro Previsto</span
+                >
+                <span class="exec-badge exec-badge-info"
+                  >Transparência de Premissas</span
+                >
+              </h3>
+              <p
+                style="
+                  margin: 0 0 1rem 0;
+                  font-size: 0.84rem;
+                  color: var(--text-muted);
+                "
+              >
+                Valores futuros fundamentados nas premissas
+                do relatório &mdash; onde não há dado de
+                base no levantamento, a limitação é
+                sinalizada como &ldquo;A medir / A
+                definir&rdquo;:
+              </p>
+            </div>
+
+            <!-- Segmented Pill Toggle (Atual | Futuro previsto | Lado a Lado) -->
+            <div
+              class="scenario-segmented-bar"
+              role="tablist"
+              aria-label="Alternar visualização entre Estado Atual e Futuro Previsto"
+            >
+              <button
+                type="button"
+                role="tab"
+                class="seg-toggle-btn"
+                data-comp-view="current"
+                aria-selected="true"
+              >
+                Atual (Diagnóstico)
+              </button>
+              <button
+                type="button"
+                role="tab"
+                class="seg-toggle-btn"
+                data-comp-view="future"
+                aria-selected="false"
+              >
+                Futuro previsto (Consultoria)
+              </button>
+              <button
+                type="button"
+                role="tab"
+                class="seg-toggle-btn"
+                data-comp-view="both"
+                aria-selected="false"
+              >
+                Comparar Lado a Lado
+              </button>
+            </div>
+
+            <div
+              id="scenario-comparator-cards-container"
+              role="region"
+              aria-live="polite"
+              aria-label="Indicadores comparados entre Estado Atual e Futuro Previsto"
+            ></div>
+
+            <p
+              style="
+                margin: 1rem 0 0 0;
+                font-size: 0.79rem;
+                color: var(--text-muted);
+              "
+            >
+              A alternância demonstra o potencial esperado
+              após as recomendações; os benefícios
+              projetados são hipóteses a validar durante o
+              piloto e não representam resultado garantido.
+            </p>
+          </article>
+
+          <!-- Bloco 2: Simulador Demonstrativo de Premissas e Ponto de Equilíbrio -->
+          <article
+            class="exec-panel-card"
+            style="margin-bottom: 1.5rem"
+            aria-labelledby="heading-comp-simulador"
+          >
+            <div class="filter-toolbar">
+              <div>
+                <h3
+                  id="heading-comp-simulador"
+                  style="
+                    margin: 0;
+                    border: none;
+                    padding: 0;
+                  "
+                >
+                  Simulador de Premissas e Ponto de
+                  Equilíbrio (Sem Alterar Dados Originais)
+                </h3>
+                <p
+                  style="
+                    margin: 0.25rem 0 0 0;
+                    font-size: 0.82rem;
+                    color: var(--text-muted);
+                  "
+                >
+                  Ajuste os parâmetros abaixo para testar a
+                  sensibilidade das hipóteses da Etapa 2
+                  sobre o benefício anual e o 5º Trimestre
+                  (T5):
+                </p>
+              </div>
+              <div
+                style="
+                  display: flex;
+                  align-items: center;
+                  gap: 0.6rem;
+                  flex-wrap: wrap;
+                "
+              >
+                <span
+                  id="sim-status-badge"
+                  class="exec-badge exec-badge-info"
+                  >Premissas Oficiais do Relatório
+                  (Hipóteses a Validar)</span
+                >
+                <button
+                  type="button"
+                  id="btn-reset-simulator"
+                  class="btn-filter-pill"
+                >
+                  Restaurar Premissas Oficiais
+                </button>
+              </div>
+            </div>
+
+            <div class="sim-layout-grid">
+              <!-- Coluna Esquerda: Controles Deslizantes (Premissas P19 a P21) -->
+              <div
+                class="sim-controls-panel"
+                aria-label="Controles de premissas do simulador"
+              >
+                <div class="sim-slider-group">
+                  <div class="sim-slider-header">
+                    <label for="sim-slider-cancel"
+                      >1. Pedidos cancelados endereçados
+                      pelo Crédito (Piloto)</label
+                    >
+                    <span
+                      id="val-sim-cancel"
+                      class="sim-slider-val"
+                      >25%</span
+                    >
+                  </div>
+                  <input
+                    type="range"
+                    id="sim-slider-cancel"
+                    class="sim-range-input"
+                    min="5"
+                    max="60"
+                    step="5"
+                    value="25"
+                  />
+                  <p class="sim-slider-sub">
+                    Base: R$ 1,25 mi em cancelamentos
+                    &times; 38% de margem bruta do DRE
+                    (Oficial: 25% = &approx; R$ 119
+                    mil/ano).
+                  </p>
+                </div>
+
+                <div class="sim-slider-group">
+                  <div class="sim-slider-header">
+                    <label for="sim-slider-triage"
+                      >2. Redução no tempo de triagem manual
+                      (Hoje: 40 min)</label
+                    >
+                    <span
+                      id="val-sim-triage"
+                      class="sim-slider-val"
+                      >75% (10 min)</span
+                    >
+                  </div>
+                  <input
+                    type="range"
+                    id="sim-slider-triage"
+                    class="sim-range-input"
+                    min="25"
+                    max="85"
+                    step="5"
+                    value="75"
+                  />
+                  <p class="sim-slider-sub">
+                    Base: 180 a 220 pedidos B2B/mês
+                    (Oficial: 75% de redução = 90 a 110
+                    h/mês economizadas).
+                  </p>
+                </div>
+
+                <div class="sim-slider-group">
+                  <div class="sim-slider-header">
+                    <label for="sim-slider-freight"
+                      >3. Redução de fretes de emergência e
+                      reentregas (Onda 2)</label
+                    >
+                    <span
+                      id="val-sim-freight"
+                      class="sim-slider-val"
+                      >50%</span
+                    >
+                  </div>
+                  <input
+                    type="range"
+                    id="sim-slider-freight"
+                    class="sim-range-input"
+                    min="10"
+                    max="80"
+                    step="5"
+                    value="50"
+                  />
+                  <p class="sim-slider-sub">
+                    Base: R$ 960 mil/ano em fretes expressos
+                    e reentregas por erro de proposta
+                    (Oficial: 50% = R$ 480 mil).
+                  </p>
+                </div>
+
+                <div class="sim-slider-group">
+                  <div class="sim-slider-header">
+                    <label for="sim-slider-boleto"
+                      >4. Redução de divergências em boletos
+                      faturados (Onda 2)</label
+                    >
+                    <span
+                      id="val-sim-boleto"
+                      class="sim-slider-val"
+                      >70%</span
+                    >
+                  </div>
+                  <input
+                    type="range"
+                    id="sim-slider-boleto"
+                    class="sim-range-input"
+                    min="20"
+                    max="90"
+                    step="5"
+                    value="70"
+                  />
+                  <p class="sim-slider-sub">
+                    Base: R$ 390 mil/ano em custos de
+                    cancelamento e juros de boletos
+                    (Oficial: 70% = R$ 273 mil).
+                  </p>
+                </div>
+
+                <div class="sim-slider-group">
+                  <div class="sim-slider-header">
+                    <label for="sim-slider-closing"
+                      >5. Meta de prazo para o fechamento
+                      contábil (Hoje: 7 dias)</label
+                    >
+                    <span
+                      id="val-sim-closing"
+                      class="sim-slider-val"
+                      >2 dias úteis</span
+                    >
+                  </div>
+                  <input
+                    type="range"
+                    id="sim-slider-closing"
+                    class="sim-range-input"
+                    min="1"
+                    max="6"
+                    step="1"
+                    value="2"
+                  />
+                  <p class="sim-slider-sub">
+                    Base: R$ 180 mil/ano em horas extras e
+                    auditorias (Oficial: 2 dias úteis =
+                    &approx; R$ 129 mil/ano).
+                  </p>
+                </div>
+              </div>
+
+              <!-- Coluna Direita: Impacto Anual Calculado e Ponto de Equilíbrio -->
+              <div
+                class="sim-results-panel"
+                role="region"
+                aria-live="polite"
+                aria-label="Resultados calculados pelo simulador"
+              >
+                <div class="sim-total-highlight">
+                  <span
+                    >Benefício Combinado Estimado (3
+                    Iniciativas)</span
+                  >
+                  <strong id="sim-res-total"
+                    >&approx; R$ 1,00 mi/ano</strong
+                  >
+                  <p
+                    id="sim-res-gap-share"
+                    style="
+                      margin: 0.35rem 0 0 0;
+                      font-size: 0.84rem;
+                      color: var(--text-secondary);
+                    "
+                  ></p>
+                </div>
+
+                <div
+                  id="sim-res-breakdown"
+                  class="quarter-stat-list"
+                  style="margin-bottom: 0"
+                ></div>
+
+                <div class="quarter-insight-box">
+                  <strong>Nota sobre ROI e Custo:</strong> O
+                  levantamento não traz o custo da solução;
+                  portanto, registramos o
+                  <strong>ponto de equilíbrio</strong> (o
+                  projeto se paga se o custo anual total
+                  ficar abaixo do benefício estimado acima).
+                  Os itens podem apresentar sobreposição
+                  parcial, devendo ser validados com dados
+                  reais do piloto.
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- Bloco 3: Cenários Ilustrativos do 5º Trimestre (T5) -->
+          <article
+            class="exec-panel-card"
+            aria-labelledby="heading-comp-t5"
+          >
+            <h3 id="heading-comp-t5">
+              <span
+                >Cenários Ilustrativos do 5º Trimestre (T5):
+                As Iniciativas Estancam Parte da Perda</span
+              >
+              <span class="exec-badge exec-badge-warn"
+                >4 Trimestres de Dados &middot; Não é
+                Previsão Estatística</span
+              >
+            </h3>
+            <p
+              style="
+                margin: 0 0 1rem 0;
+                font-size: 0.88rem;
+                color: var(--text-secondary);
+              "
+            >
+              Projetando o 5º trimestre (T5, com receita
+              estimada de
+              <strong>&approx; R$ 14,2 milhões</strong> pela
+              tendência linear), avaliamos o efeito das
+              iniciativas sobre dois cenários de base:
+              <strong
+                >(A) continuidade da queda linear
+                (3,9%)</strong
+              >
+              e
+              <strong
+                >(B) manutenção do patamar do T4
+                (7,5%)</strong
+              >:
+            </p>
+
+            <div class="chart-split-grid">
+              <div
+                id="t5-scenarios-svg-container"
+                class="svg-chart-wrapper"
+              ></div>
+              <div>
+                <div
+                  id="t5-scenarios-table-container"
+                ></div>
+                <div
+                  class="quarter-insight-box"
+                  style="margin-top: 0.9rem"
+                >
+                  <strong
+                    >Conclusão estratégica para a
+                    CEO:</strong
+                  >
+                  No T4, o EBITDA ficou
+                  <strong
+                    >R$ 1,89 mi abaixo do orçado</strong
+                  >
+                  em um único trimestre; o benefício
+                  trimestral das três iniciativas (&approx;
+                  R$ 250 mil) cobre
+                  <strong>cerca de 13% desse déficit</strong
+                  >. As iniciativas estancam parte relevante
+                  do vazamento, mas não fecham o gap
+                  sozinhas &mdash; exigindo atacar também
+                  <strong
+                    >fretes (R$ 1,36 mi do gap)</strong
+                  >
+                  e
+                  <strong>cobrança/PDD (R$ 0,67 mi)</strong>
+                  na Fase 2.
+                </div>
+              </div>
+            </div>
+          </article>
+        </section>
+
+        <!-- ==================================================================
+          PÁGINA 7: PLANO DE AÇÃO (Completa nesta Parte 6 — Governança e Fase 2)
+          ================================================================== -->
+        <section
+          id="panel-plano-acao"
+          class="page-panel"
+          role="tabpanel"
+          aria-labelledby="tab-plano-acao"
+          hidden
+        >
+          <div class="page-hero-banner">
+            <span class="page-eyebrow"
+              >7. Plano de Ação &middot; Prioridades,
+              Governança de IA, Limites e Próximos
+              Passos</span
+            >
+            <h2>
+              Roteiro de Implantação, Governança Responsável
+              e Continuidade (Fase 2)
+            </h2>
+            <p class="page-hero-lead">
+              Para capturar os ganhos rápidos do Piloto de
+              Crédito sem expor a Taranis Black a riscos de
+              inadimplência, viés ou violação da LGPD,
+              propomos uma estrutura clara de decisões
+              pré-implantação, Política de IA Responsável,
+              Comitê de Auditoria e escopo de evolução para
+              a Fase 2.
+            </p>
+          </div>
+
+          <!-- Bloco 1: Decisões Pré-Implantação para a CEO -->
+          <article
+            class="exec-panel-card"
+            style="margin-bottom: 1.5rem"
+            aria-labelledby="heading-plan-decisions"
+          >
+            <h3 id="heading-plan-decisions">
+              <span
+                >Próximos Passos Imediatos: 3 Decisões
+                Pré-Implantação (Piloto de 60 Dias)</span
+              >
+              <span class="exec-badge exec-badge-warn"
+                >Aprovação Executiva</span
+              >
+            </h3>
+            <div id="plan-decisions-container"></div>
+            <div
+              class="quarter-insight-box"
+              style="margin-top: 1rem"
+            >
+              <strong
+                >Condição de avanço para a Onda 2:</strong
+              >
+              Os critérios operacionais do piloto (teto de
+              R$ 15 mil, caso limpo e SLA de 4h úteis) são
+              premissas propostas pela consultoria a validar
+              pela liderança; os desdobramentos técnicos da
+              Onda 2 (Leitura de Propostas e Conciliação) só
+              avançam após a validação objetiva dos 60 dias
+              de piloto.
+            </div>
+          </article>
+
+          <!-- Bloco 2: Política Corporativa de IA Responsável (Pode vs. Não Pode + Riscos e LGPD) -->
+          <article
+            class="exec-panel-card"
+            style="margin-bottom: 1.5rem"
+            aria-labelledby="heading-plan-policy"
+          >
+            <h3 id="heading-plan-policy">
+              <span
+                >Política Corporativa de IA Responsável:
+                Regras de Uso e Conformidade LGPD</span
+              >
+              <span class="exec-badge exec-badge-ok"
+                >Transparência e Rastreabilidade</span
+              >
+            </h3>
+            <p
+              style="
+                margin: 0 0 1rem 0;
+                font-size: 0.86rem;
+                color: var(--text-secondary);
+              "
+            >
+              <strong>Princípios norteadores:</strong>
+              Decisão humana nas exceções &middot;
+              Transparência (registro da regra e dos dados
+              aplicados em cada aprovação) &middot;
+              Minimização de dados &middot;
+              Confidencialidade &middot; Um dono formal por
+              caso de uso.
+            </p>
+            <div
+              id="plan-policy-can-cannot-container"
+            ></div>
+            <div id="plan-risks-lgpd-container"></div>
+          </article>
+
+          <!-- Bloco 3: Comitê de IA, Cadência de Auditoria e Gestão de Mudança -->
+          <article
+            class="exec-panel-card"
+            style="margin-bottom: 1.5rem"
+            aria-labelledby="heading-plan-committee"
+          >
+            <h3 id="heading-plan-committee">
+              <span
+                >Comitê de IA, Cadência de Auditoria e Plano
+                de Gestão de Mudança</span
+              >
+              <span class="exec-badge exec-badge-info"
+                >Coordenado pela Controladoria</span
+              >
+            </h3>
+            <p
+              style="
+                margin: 0 0 0.65rem 0;
+                font-size: 0.86rem;
+                color: var(--text-secondary);
+              "
+            >
+              <strong>Composição do Comitê:</strong>
+              Controladoria (coordenação), Financeiro,
+              Comercial, TI, Jurídico (ou encarregado de
+              dados/DPO), RH e Expedição (CD).
+              <strong>Poderes:</strong> suspender
+              imediatamente um caso de uso, alterar o teto
+              de alçada e exigir correções.
+            </p>
+            <div id="plan-audit-cadence-container"></div>
+
+            <h4
+              style="
+                margin: 1.35rem 0 0.5rem 0;
+                font-size: 0.98rem;
+                color: var(--text-primary);
+              "
+            >
+              Os 5 Pilares do Plano de Gestão de Mudança e
+              Adoção
+            </h4>
+            <div id="plan-change-pillars-container"></div>
+          </article>
+
+          <!-- Bloco 4: Limites Declarados, Roadmap da Fase 2 e Documentos da Consultoria -->
+          <article
+            class="exec-panel-card"
+            aria-labelledby="heading-plan-phase2"
+          >
+            <h3 id="heading-plan-phase2">
+              <span
+                >Limites Declarados do Diagnóstico &amp;
+                Escopo Proposto para a Fase 2</span
+              >
+              <span class="exec-badge exec-badge-info"
+                >Evolução Estruturada</span
+              >
+            </h3>
+
+            <div
+              class="use-case-block"
+              style="
+                margin-bottom: 1.25rem;
+                border-left: 4px solid var(--brand-gold);
+              "
+            >
+              <strong
+                >Limites metodológicos declarados nesta
+                entrega</strong
+              >
+              <div
+                id="plan-limits-list-container"
+                style="margin-top: 0.4rem"
+              ></div>
+            </div>
+
+            <h4
+              style="
+                margin: 0 0 0.75rem 0;
+                font-size: 0.98rem;
+                color: var(--text-primary);
+              "
+            >
+              Fase 2 Proposta (Continuidade em 5 Frentes
+              após o Piloto)
+            </h4>
+            <div id="plan-phase2-steps-container"></div>
+
+            <button
+              type="button"
+              class="exec-accordion-btn"
+              aria-expanded="false"
+              aria-controls="panel-reference-docs"
+            >
+              <span
+                >Ver entregas e documentos completos da
+                consultoria (espaços reservados para links
+                públicos)</span
+              >
+              <span aria-hidden="true">&#9662;</span>
+            </button>
+            <div
+              id="panel-reference-docs"
+              class="exec-accordion-content"
+              hidden
+            >
+              <div
+                id="plan-deliverables-links-container"
+              ></div>
+            </div>
+          </article>
+        </section>
+
+        <!-- Barra de Navegação Sequencial na Base do Main -->
+        <nav
+          class="main-seq-footer"
+          aria-label="Navegação sequencial entre as páginas do painel"
+        >
+          <button
+            type="button"
+            id="btn-seq-prev"
+            class="btn-exec-action"
+          >
+            <span aria-hidden="true">&larr;</span>
+            <span>Anterior</span>
+          </button>
+          <span
+            id="seq-status-label"
+            class="seq-status-text"
+            >Página 1 de 7 &mdash; Visão Executiva</span
+          >
+          <button
+            type="button"
+            id="btn-seq-next"
+            class="btn-exec-action btn-exec-primary"
+          >
+            <span>Próxima</span>
+            <span aria-hidden="true">&rarr;</span>
+          </button>
+        </nav>
+      </main>
+    </div>
+
+    <!-- ======================================================================
+      FOOTER: Rodapé Pessoal de Ricardo Werner (Caminhos Originais Mantidos)
+      ====================================================================== -->
+    <footer class="site-footer" aria-label="Rodapé">
+      <div class="footer-container">
+        <div id="footer-brand" class="footer-brand">
+          <img
+            id="footer-logo"
+            src="./assets/images/RicWerner-LogoNight.png"
+            alt="Logotipo pessoal de Ricardo Werner"
+            class="footer-logo"
+            loading="lazy"
+          />
+          <p class="footer-copyright">
+            &copy; <span id="year-footer"></span> - Ricardo
+            Werner - Todos os direitos reservados |
+            Desenvolvedor Front-end com Acessibilidade, UX e
+            Inclusão Digital.
+          </p>
+        </div>
+
+        <div
+          class="footer-social"
+          aria-label="Links profissionais de Ricardo Werner"
+        >
+          <a
+            href="#"
+            class="social-link"
+            aria-label="LinkedIn de Ricardo Werner (preencher URL)"
+          >
+            <img
+              src="./assets/icons/linkedin.svg"
+              alt=""
+              class="social-icon"
+              aria-hidden="true"
+            />
+            <span>LinkedIn</span>
+          </a>
+          <a
+            href="#"
+            class="social-link"
+            aria-label="GitHub de Ricardo Werner (preencher URL)"
+          >
+            <img
+              src="./assets/icons/github.svg"
+              alt=""
+              class="social-icon"
+              aria-hidden="true"
+            />
+            <span>GitHub</span>
+          </a>
+        </div>
+      </div>
+    </footer>
+
+    <script src="./js/modules/db.js"></script>
+    <script src="./js/modules/charts.js"></script>
+    <script src="./js/modules/simulator.js"></script>
+    <script src="./js/modules/menu.js"></script>
+    <script src="./js/main.js"></script>
+  </body>
+</html>
