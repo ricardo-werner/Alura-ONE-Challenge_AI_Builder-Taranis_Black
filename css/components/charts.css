@@ -1,0 +1,1317 @@
+/* ==========================================================================
+   ESTILOS DE GRÁFICOS, TABELAS E DIAGNÓSTICO (/css/components/charts.css)
+   Parte 2: Indicadores (Página 2) e Diagnóstico (Página 3)
+   ========================================================================== */
+
+.chart-placeholder-box {
+  background-color: var(--bg-surface);
+  border: 1px dashed var(--border-strong);
+  border-radius: var(--radius-lg);
+  padding: 2rem;
+  text-align: center;
+  color: var(--text-secondary);
+}
+
+/* Barra de Filtros de Período / Visualização */
+.filter-toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  margin-bottom: 1.25rem;
+  padding-bottom: 0.85rem;
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.filter-btn-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+}
+
+.btn-filter-pill {
+  padding: 0.45rem 0.9rem;
+  font-size: 0.82rem;
+  font-weight: 600;
+  font-family: inherit;
+  border-radius: 999px;
+  background-color: var(--bg-surface-alt);
+  color: var(--text-secondary);
+  border: 1.5px solid var(--border-subtle);
+  cursor: pointer;
+  transition: all var(--transition-ui);
+}
+
+.btn-filter-pill:hover {
+  border-color: var(--brand-gold);
+  color: var(--text-primary);
+}
+
+.btn-filter-pill[aria-pressed="true"] {
+  background-color: var(--brand-gold);
+  color: var(--brand-navy);
+  border-color: var(--brand-gold);
+  font-weight: 800;
+}
+
+/* Layout Gráfico + Painel Lateral Trimestral */
+.chart-split-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.55fr) minmax(280px, 1fr);
+  gap: 1.25rem;
+  align-items: stretch;
+}
+
+.svg-chart-wrapper {
+  width: 100%;
+  background-color: var(--bg-surface-alt);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  padding: 1rem;
+  overflow-x: auto;
+}
+
+.exec-svg {
+  width: 100%;
+  height: auto;
+  max-height: 310px;
+  display: block;
+}
+
+.chart-legend-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1.25rem;
+  margin-top: 0.65rem;
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+}
+
+.legend-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  font-weight: 600;
+}
+
+.legend-swatch-orcado {
+  width: 22px;
+  height: 4px;
+  border-top: 3px dashed var(--accent-secondary);
+  display: inline-block;
+}
+
+.legend-swatch-realizado {
+  width: 22px;
+  height: 4px;
+  background-color: var(--brand-gold);
+  display: inline-block;
+}
+
+/* Card de Detalhe Trimestral ao lado do gráfico */
+.quarter-spotlight-card {
+  background-color: var(--bg-surface-alt);
+  border: 1.5px solid var(--brand-gold);
+  border-radius: var(--radius-md);
+  padding: 1.15rem 1.25rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.quarter-spotlight-card h4 {
+  margin: 0 0 0.65rem 0;
+  font-size: 1rem;
+  color: var(--text-primary);
+}
+
+.quarter-stat-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-bottom: 0.85rem;
+}
+
+.quarter-stat-row {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.84rem;
+  padding-bottom: 0.35rem;
+  border-bottom: 1px dashed var(--border-subtle);
+}
+
+.quarter-stat-row span {
+  color: var(--text-muted);
+}
+
+.quarter-stat-row strong {
+  color: var(--text-primary);
+  font-variant-numeric: tabular-nums;
+}
+
+.quarter-insight-box {
+  margin: 0;
+  font-size: 0.83rem;
+  color: var(--text-secondary);
+  background-color: var(--bg-surface);
+  border-left: 3px solid var(--brand-gold);
+  padding: 0.65rem 0.8rem;
+  border-radius: var(--radius-sm);
+}
+
+/* Cards de Linhas de Produto (Aba 2) */
+.product-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.product-line-card {
+  background-color: var(--bg-surface-alt);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  padding: 1.1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 0.65rem;
+}
+
+.product-line-top {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 0.5rem;
+}
+
+.product-line-top h4 {
+  margin: 0;
+  font-size: 0.94rem;
+  color: var(--text-primary);
+}
+
+.product-metrics-strip {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.4rem;
+  background-color: var(--bg-surface);
+  padding: 0.55rem 0.65rem;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border-subtle);
+  font-size: 0.78rem;
+}
+
+.product-metrics-strip div span {
+  display: block;
+  color: var(--text-muted);
+  font-size: 0.7rem;
+}
+
+.product-metrics-strip div strong {
+  color: var(--text-primary);
+  font-variant-numeric: tabular-nums;
+}
+
+.product-bottleneck-note {
+  margin: 0;
+  font-size: 0.81rem;
+  color: var(--text-secondary);
+}
+
+/* Tabelas Executivas Financeiras (DRE, Anomalias, Gargalos) */
+.table-scroll-container {
+  width: 100%;
+  overflow-x: auto;
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+}
+
+.exec-data-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.83rem;
+  text-align: left;
+}
+
+.exec-data-table th,
+.exec-data-table td {
+  padding: 0.65rem 0.85rem;
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.exec-data-table thead th {
+  background-color: var(--bg-surface-alt);
+  color: var(--text-primary);
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.exec-data-table td.num,
+.exec-data-table th.num {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+
+.exec-data-table tr.row-section-header td {
+  background-color: rgba(15, 92, 110, 0.22);
+  color: var(--accent-secondary);
+  font-weight: 800;
+  font-size: 0.79rem;
+  letter-spacing: 0.03em;
+}
+
+.exec-data-table tr.row-subtotal td {
+  background-color: rgba(212, 167, 46, 0.12);
+  font-weight: 800;
+  color: var(--text-primary);
+}
+
+.exec-data-table tr.row-critical-deviation td:first-child {
+  border-left: 4px solid #FB7185;
+}
+
+/* Decomposição do Gap de R$ 4,08 mi (Barras Horizontais Acessíveis) */
+.gap-bars-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+}
+
+.gap-bar-item {
+  background-color: var(--bg-surface-alt);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  padding: 0.85rem 1.05rem;
+}
+
+.gap-bar-header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  margin-bottom: 0.45rem;
+}
+
+.gap-bar-title {
+  font-weight: 700;
+  font-size: 0.9rem;
+  color: var(--text-primary);
+}
+
+.gap-bar-figures {
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: var(--text-secondary);
+  font-variant-numeric: tabular-nums;
+}
+
+.gap-bar-track {
+  width: 100%;
+  height: 14px;
+  background-color: var(--bg-surface);
+  border: 1px solid var(--border-strong);
+  border-radius: 999px;
+  overflow: hidden;
+  margin-bottom: 0.4rem;
+}
+
+.gap-bar-fill-critical {
+  height: 100%;
+  background: linear-gradient(90deg, var(--brand-teal) 0%, var(--brand-gold) 100%);
+  border-right: 2px solid var(--brand-white);
+}
+
+.gap-bar-fill-other {
+  height: 100%;
+  background-color: var(--brand-slate);
+}
+
+.gap-bar-caption {
+  margin: 0;
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+}
+
+/* Comparativo Estrutural: Aprovação de Pedidos vs. Conciliação */
+.process-distinction-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(310px, 1fr));
+  gap: 1.25rem;
+}
+
+.process-dist-card {
+  background-color: var(--bg-surface-alt);
+  border: 1.5px solid var(--border-strong);
+  border-radius: var(--radius-md);
+  padding: 1.2rem;
+}
+
+.process-dist-card.primary-scope {
+  border-color: var(--brand-gold);
+}
+
+.process-dist-card h4 {
+  margin: 0.35rem 0 0.5rem 0;
+  font-size: 1rem;
+  color: var(--text-primary);
+}
+
+.process-dist-meta {
+  font-size: 0.83rem;
+  color: var(--text-secondary);
+  margin: 0 0 0.75rem 0;
+}
+
+.process-dist-list {
+  margin: 0;
+  padding-left: 1.15rem;
+  font-size: 0.83rem;
+  color: var(--text-secondary);
+}
+
+.process-dist-list li {
+  margin-bottom: 0.35rem;
+}
+
+/* Acordeão de Notas Metodológicas e Auditoria para a Controladoria */
+.exec-accordion-btn {
+  width: 100%;
+  text-align: left;
+  background-color: var(--bg-surface-alt);
+  color: var(--text-primary);
+  border: 1.5px solid var(--border-strong);
+  border-radius: var(--radius-md);
+  padding: 0.85rem 1.15rem;
+  font-size: 0.9rem;
+  font-weight: 700;
+  font-family: inherit;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-top: 1rem;
+  transition: border-color var(--transition-ui), background-color var(--transition-ui);
+}
+
+.exec-accordion-btn:hover {
+  border-color: var(--brand-gold);
+}
+
+.exec-accordion-content {
+  background-color: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
+  border-top: none;
+  border-radius: 0 0 var(--radius-md) var(--radius-md);
+  padding: 1.15rem;
+}
+
+.audit-points-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 0.9rem;
+}
+
+.audit-point-card {
+  background-color: var(--bg-surface-alt);
+  border: 1px solid var(--border-subtle);
+  border-left: 3px solid var(--brand-gold);
+  border-radius: var(--radius-sm);
+  padding: 0.85rem 1rem;
+  font-size: 0.82rem;
+}
+
+.audit-point-card strong {
+  display: block;
+  color: var(--text-primary);
+  margin-bottom: 0.3rem;
+}
+
+.audit-point-card p {
+  margin: 0 0 0.4rem 0;
+  color: var(--text-secondary);
+}
+
+@media (max-width: 960px) {
+  .chart-split-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ==========================================================================
+   PARTE 3: SIPOC INTERATIVO E DIAGRAMA DE ISHIKAWA (6M)
+   ========================================================================== */
+
+/* Stepper Horizontal das 6 Etapas do SIPOC */
+.sipoc-stepper {
+  display: grid;
+  grid-template-columns: repeat(6, minmax(135px, 1fr));
+  gap: 0.55rem;
+  margin-bottom: 1.25rem;
+  overflow-x: auto;
+  padding-bottom: 0.35rem;
+}
+
+.sipoc-step-btn {
+  text-align: left;
+  background-color: var(--bg-surface-alt);
+  border: 1.5px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  padding: 0.75rem 0.85rem;
+  color: var(--text-secondary);
+  font-family: inherit;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 0.4rem;
+  transition: all var(--transition-ui);
+}
+
+.sipoc-step-btn:hover {
+  border-color: var(--brand-gold);
+  color: var(--text-primary);
+}
+
+.sipoc-step-btn[aria-selected="true"] {
+  background-color: var(--brand-gold);
+  color: var(--brand-navy);
+  border-color: var(--brand-gold);
+  box-shadow: 0 4px 12px rgba(212, 167, 46, 0.3);
+}
+
+.sipoc-step-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  font-size: 0.74rem;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.sipoc-step-name {
+  font-size: 0.85rem;
+  font-weight: 700;
+  line-height: 1.25;
+}
+
+.sipoc-step-pain {
+  font-size: 0.71rem;
+  font-weight: 600;
+  opacity: 0.9;
+}
+
+/* Card Detalhado da Etapa Selecionada no SIPOC */
+.sipoc-detail-stage {
+  background-color: var(--bg-surface-alt);
+  border: 1.5px solid var(--border-strong);
+  border-radius: var(--radius-lg);
+  padding: 1.35rem;
+}
+
+.sipoc-stage-header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.sipoc-stage-header h4 {
+  margin: 0;
+  font-size: 1.12rem;
+  color: var(--text-primary);
+}
+
+.sipoc-columns-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(185px, 1fr));
+  gap: 0.85rem;
+  margin-bottom: 1rem;
+}
+
+.sipoc-col-box {
+  background-color: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
+  border-top: 3px solid var(--brand-teal);
+  border-radius: var(--radius-md);
+  padding: 0.85rem 0.95rem;
+}
+
+.sipoc-col-box.col-process {
+  border-top-color: var(--brand-gold);
+}
+
+.sipoc-col-letter {
+  display: inline-block;
+  font-size: 0.72rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--accent-secondary);
+  margin-bottom: 0.3rem;
+}
+
+.sipoc-col-box.col-process .sipoc-col-letter {
+  color: var(--accent-primary);
+}
+
+.sipoc-col-box p {
+  margin: 0;
+  font-size: 0.84rem;
+  color: var(--text-secondary);
+}
+
+.sipoc-pain-banner {
+  background-color: var(--badge-alert-bg);
+  border: 1px solid var(--badge-alert-border);
+  color: var(--text-primary);
+  border-radius: var(--radius-md);
+  padding: 0.8rem 1rem;
+  font-size: 0.86rem;
+  margin-bottom: 0.85rem;
+}
+
+.sipoc-ai-layer-box {
+  background: linear-gradient(135deg, rgba(15, 92, 110, 0.32), rgba(212, 167, 46, 0.16));
+  border: 1.5px solid var(--brand-gold);
+  border-radius: var(--radius-md);
+  padding: 1rem 1.15rem;
+  font-size: 0.86rem;
+}
+
+.sipoc-ai-layer-box h5 {
+  margin: 0 0 0.4rem 0;
+  font-size: 0.92rem;
+  color: var(--text-primary);
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+}
+
+.sipoc-ai-layer-box p {
+  margin: 0 0 0.45rem 0;
+  color: var(--text-secondary);
+}
+
+/* Diagrama de Ishikawa (6M) e Cards 6M */
+.ishikawa-6m-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+  gap: 1rem;
+  margin-top: 1.15rem;
+}
+
+.ishikawa-m-card {
+  background-color: var(--bg-surface-alt);
+  border: 1.5px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  padding: 1rem 1.1rem;
+  transition: border-color var(--transition-ui), transform var(--transition-ui);
+}
+
+.ishikawa-m-card.m-card-active {
+  border-color: var(--brand-gold);
+  box-shadow: 0 0 0 2px rgba(212, 167, 46, 0.25);
+}
+
+.ishikawa-m-card h4 {
+  margin: 0 0 0.65rem 0;
+  font-size: 0.96rem;
+  color: var(--text-primary);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid var(--border-subtle);
+  padding-bottom: 0.45rem;
+}
+
+.ishikawa-cause-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
+}
+
+.ishikawa-cause-item {
+  font-size: 0.83rem;
+  color: var(--text-secondary);
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5rem;
+  line-height: 1.45;
+}
+
+.cause-type-tag {
+  font-size: 0.7rem;
+  font-weight: 800;
+  padding: 0.1rem 0.42rem;
+  border-radius: 4px;
+  flex-shrink: 0;
+  margin-top: 0.1rem;
+}
+
+.tag-type-R {
+  background-color: var(--badge-alert-bg);
+  color: var(--badge-alert-text);
+  border: 1px solid var(--badge-alert-border);
+}
+
+.tag-type-C {
+  background-color: var(--badge-warn-bg);
+  color: var(--badge-warn-text);
+  border: 1px solid var(--badge-warn-border);
+}
+
+.tag-type-S {
+  background-color: var(--bg-surface);
+  color: var(--text-muted);
+  border: 1px dashed var(--border-strong);
+}
+
+/* Cards das Top 3 Causas Críticas */
+.top-causes-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(275px, 1fr));
+  gap: 1rem;
+}
+
+.top-cause-card {
+  background-color: var(--bg-surface-alt);
+  border: 1px solid var(--border-subtle);
+  border-top: 4px solid var(--brand-gold);
+  border-radius: var(--radius-md);
+  padding: 1.15rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 0.65rem;
+}
+
+.top-cause-card h4 {
+  margin: 0.25rem 0 0 0;
+  font-size: 0.98rem;
+  color: var(--text-primary);
+}
+
+.top-cause-meta {
+  font-size: 0.82rem;
+  color: var(--text-secondary);
+  margin: 0;
+}
+
+.whys-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.why-chain-item {
+  background-color: var(--bg-surface-alt);
+  border: 1px solid var(--border-subtle);
+  border-left: 4px solid var(--brand-teal);
+  border-radius: var(--radius-sm);
+  padding: 0.8rem 1rem;
+  font-size: 0.84rem;
+}
+
+.why-chain-item strong {
+  display: block;
+  color: var(--text-primary);
+  margin-bottom: 0.25rem;
+}
+
+.why-chain-item p {
+  margin: 0;
+  color: var(--text-secondary);
+}
+
+/* ==========================================================================
+   PARTE 4: SOLUÇÕES COM IA, HUMAN-IN-THE-LOOP E MATRIZ ESFORÇO x IMPACTO
+   ========================================================================== */
+
+.use-cases-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(310px, 1fr));
+  gap: 1.25rem;
+}
+
+.use-case-card {
+  background-color: var(--bg-surface-alt);
+  border: 1.5px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  padding: 1.3rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 0.9rem;
+  transition: border-color var(--transition-ui), box-shadow var(--transition-ui);
+}
+
+.use-case-card.uc-priority-1 {
+  border-color: var(--brand-gold);
+}
+
+.use-case-card.uc-selected-matrix {
+  border-color: var(--brand-gold);
+  box-shadow: 0 0 0 2px rgba(212, 167, 46, 0.35);
+}
+
+.use-case-header h4 {
+  margin: 0.45rem 0 0.25rem 0;
+  font-size: 1.05rem;
+  color: var(--text-primary);
+}
+
+.use-case-owner {
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  font-weight: 600;
+}
+
+.use-case-block {
+  background-color: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  padding: 0.75rem 0.9rem;
+  font-size: 0.83rem;
+}
+
+.use-case-block strong {
+  display: block;
+  color: var(--text-primary);
+  margin-bottom: 0.2rem;
+  font-size: 0.79rem;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+
+.use-case-block p {
+  margin: 0;
+  color: var(--text-secondary);
+}
+
+.use-case-footer-metrics {
+  background: linear-gradient(135deg, rgba(15, 92, 110, 0.26), rgba(212, 167, 46, 0.14));
+  border: 1px solid var(--brand-gold);
+  border-radius: var(--radius-md);
+  padding: 0.75rem 0.9rem;
+  font-size: 0.82rem;
+}
+
+.use-case-footer-metrics p {
+  margin: 0 0 0.35rem 0;
+  color: var(--text-secondary);
+}
+
+.use-case-footer-metrics p:last-child {
+  margin-bottom: 0;
+}
+
+/* Simulador de Regras Human-in-the-Loop */
+.hitl-simulator-stage {
+  background-color: var(--bg-surface-alt);
+  border: 1.5px solid var(--brand-gold);
+  border-radius: var(--radius-lg);
+  padding: 1.25rem 1.4rem;
+}
+
+.hitl-flow-steps {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 0.85rem;
+  margin-top: 0.9rem;
+}
+
+.hitl-step-box {
+  background-color: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
+  border-top: 3px solid var(--brand-teal);
+  border-radius: var(--radius-md);
+  padding: 0.85rem 0.95rem;
+  font-size: 0.84rem;
+}
+
+.hitl-step-box.step-decision-human {
+  border-top-color: var(--brand-gold);
+}
+
+.hitl-step-label {
+  display: block;
+  font-size: 0.72rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--accent-secondary);
+  margin-bottom: 0.3rem;
+}
+
+.hitl-step-box.step-decision-human .hitl-step-label {
+  color: var(--accent-primary);
+}
+
+.hitl-step-box p {
+  margin: 0;
+  color: var(--text-secondary);
+}
+
+.hitl-channel-rules-strip {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 0.9rem;
+  margin-top: 1rem;
+}
+
+.channel-rule-card {
+  background-color: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
+  border-left: 4px solid var(--brand-gold);
+  border-radius: var(--radius-sm);
+  padding: 0.75rem 1rem;
+  font-size: 0.83rem;
+}
+
+.channel-rule-card strong {
+  display: block;
+  color: var(--text-primary);
+  margin-bottom: 0.2rem;
+}
+
+.channel-rule-card p {
+  margin: 0;
+  color: var(--text-secondary);
+}
+
+/* ==========================================================================
+   PARTE 5: PÁGINA 6 (COMPARATIVOS — ATUAL vs. FUTURO PREVISTO, SIMULADOR E T5)
+   ========================================================================== */
+
+/* Segmented Pill Toggle — Fiel às Imagens 1 e 2 */
+.scenario-segmented-bar {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(140px, 1fr));
+  gap: 0.45rem;
+  background-color: var(--bg-app);
+  border: 1.5px solid var(--border-strong);
+  border-radius: 999px;
+  padding: 0.35rem;
+  max-width: 680px;
+  margin-bottom: 1.25rem;
+}
+
+.seg-toggle-btn {
+  border: none;
+  border-radius: 999px;
+  background: transparent;
+  color: var(--text-secondary);
+  font-family: inherit;
+  font-size: 0.88rem;
+  font-weight: 700;
+  padding: 0.6rem 1rem;
+  cursor: pointer;
+  transition: all var(--transition-ui);
+}
+
+.seg-toggle-btn:hover {
+  color: var(--text-primary);
+}
+
+.seg-toggle-btn[aria-selected="true"] {
+  background-color: var(--bg-surface-alt);
+  color: var(--text-primary);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.35);
+  border: 1.5px solid var(--brand-gold);
+}
+
+/* Grid de Cards do Comparador (Estilo Imagens 1 e 2) */
+.comp-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(310px, 1fr));
+  gap: 1.15rem;
+}
+
+.comp-scenario-card {
+  background-color: var(--bg-surface-alt);
+  border: 1.5px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  padding: 1.3rem 1.4rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 0.65rem;
+  transition: border-color var(--transition-ui), transform var(--transition-ui);
+}
+
+.comp-scenario-card.mode-future {
+  border-color: rgba(56, 189, 248, 0.55);
+}
+
+.comp-scenario-card.mode-current {
+  border-color: rgba(212, 167, 46, 0.45);
+}
+
+.comp-metric-label {
+  font-size: 0.84rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  margin: 0;
+}
+
+.comp-big-value {
+  font-size: clamp(1.35rem, 2vw, 1.7rem);
+  font-weight: 800;
+  color: var(--text-primary);
+  margin: 0.1rem 0;
+  font-variant-numeric: tabular-nums;
+}
+
+.comp-pill-current {
+  display: inline-flex;
+  align-self: flex-start;
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 0.22rem 0.7rem;
+  border-radius: 999px;
+  background-color: rgba(217, 119, 6, 0.22);
+  color: #FBBF24;
+  border: 1px solid rgba(245, 158, 11, 0.55);
+}
+
+[data-theme="light"] .comp-pill-current {
+  background-color: #FEF3C7;
+  color: #92400E;
+  border-color: #D97706;
+}
+
+.comp-pill-future {
+  display: inline-flex;
+  align-self: flex-start;
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 0.22rem 0.7rem;
+  border-radius: 999px;
+  background-color: rgba(2, 132, 199, 0.24);
+  color: #7DD3FC;
+  border: 1px solid rgba(56, 189, 248, 0.6);
+}
+
+[data-theme="light"] .comp-pill-future {
+  background-color: #E0F2FE;
+  color: #075985;
+  border-color: #0284C7;
+}
+
+.comp-desc-text {
+  margin: 0.25rem 0 0 0;
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  line-height: 1.5;
+}
+
+.comp-side-by-side-box {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.75rem;
+  margin-top: 0.35rem;
+}
+
+.comp-half-pane {
+  background-color: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  padding: 0.75rem 0.85rem;
+}
+
+/* Simulador Demonstrativo de Premissas */
+.sim-layout-grid {
+  display: grid;
+  grid-template-columns: minmax(300px, 1.15fr) minmax(300px, 1fr);
+  gap: 1.35rem;
+  align-items: start;
+}
+
+.sim-controls-panel {
+  background-color: var(--bg-surface-alt);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  padding: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.sim-slider-group {
+  background-color: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  padding: 0.8rem 1rem;
+}
+
+.sim-slider-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.35rem;
+  font-size: 0.84rem;
+}
+
+.sim-slider-header label {
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.sim-slider-val {
+  font-weight: 800;
+  color: var(--brand-gold);
+  font-variant-numeric: tabular-nums;
+}
+
+[data-theme="light"] .sim-slider-val {
+  color: var(--brand-teal);
+}
+
+.sim-range-input {
+  width: 100%;
+  accent-color: var(--brand-gold);
+  cursor: pointer;
+}
+
+.sim-slider-sub {
+  margin: 0.25rem 0 0 0;
+  font-size: 0.75rem;
+  color: var(--text-muted);
+}
+
+.sim-results-panel {
+  background-color: var(--bg-surface-alt);
+  border: 1.5px solid var(--brand-gold);
+  border-radius: var(--radius-lg);
+  padding: 1.3rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+}
+
+.sim-total-highlight {
+  background: linear-gradient(135deg, rgba(15, 92, 110, 0.35), rgba(212, 167, 46, 0.18));
+  border: 1px solid var(--brand-gold);
+  border-radius: var(--radius-md);
+  padding: 1rem 1.15rem;
+  text-align: center;
+}
+
+.sim-total-highlight span {
+  display: block;
+  font-size: 0.78rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--text-secondary);
+}
+
+.sim-total-highlight strong {
+  display: block;
+  font-size: clamp(1.65rem, 2.5vw, 2.2rem);
+  font-weight: 800;
+  color: var(--text-primary);
+  margin: 0.2rem 0;
+  font-variant-numeric: tabular-nums;
+}
+
+@media (max-width: 960px) {
+  .sim-layout-grid {
+    grid-template-columns: 1fr;
+  }
+  .scenario-segmented-bar {
+    grid-template-columns: 1fr;
+    border-radius: var(--radius-md);
+  }
+  .comp-side-by-side-box {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ==========================================================================
+   PARTE 6: PÁGINA 7 (PLANO DE AÇÃO, GOVERNANÇA, COMITÊ, LIMITES E FASE 2)
+   ========================================================================== */
+
+.policy-can-cannot-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(310px, 1fr));
+  gap: 1.25rem;
+  margin-bottom: 1.25rem;
+}
+
+.policy-column-box {
+  background-color: var(--bg-surface-alt);
+  border: 1.5px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  padding: 1.25rem;
+}
+
+.policy-column-box.policy-can {
+  border-top: 4px solid #34D399;
+}
+
+.policy-column-box.policy-cannot {
+  border-top: 4px solid #FB7185;
+}
+
+.policy-column-box h4 {
+  margin: 0 0 0.85rem 0;
+  font-size: 1rem;
+  color: var(--text-primary);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.policy-rule-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.policy-rule-list li {
+  font-size: 0.84rem;
+  color: var(--text-secondary);
+  display: flex;
+  align-items: flex-start;
+  gap: 0.55rem;
+  line-height: 1.45;
+}
+
+.policy-icon-can {
+  color: #34D399;
+  font-weight: 800;
+  flex-shrink: 0;
+}
+
+.policy-icon-cannot {
+  color: #FB7185;
+  font-weight: 800;
+  flex-shrink: 0;
+}
+
+/* Linha do Tempo de Auditoria e Pilares de Mudança */
+.audit-cadence-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(215px, 1fr));
+  gap: 0.9rem;
+  margin-top: 0.9rem;
+}
+
+.audit-cadence-card {
+  background-color: var(--bg-surface-alt);
+  border: 1px solid var(--border-subtle);
+  border-top: 3px solid var(--brand-gold);
+  border-radius: var(--radius-md);
+  padding: 0.95rem 1.05rem;
+  font-size: 0.83rem;
+}
+
+.audit-cadence-card strong {
+  display: block;
+  font-size: 0.92rem;
+  color: var(--text-primary);
+  margin-bottom: 0.15rem;
+}
+
+.audit-cadence-scope {
+  display: block;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--accent-secondary);
+  margin-bottom: 0.4rem;
+}
+
+.audit-cadence-card p {
+  margin: 0;
+  color: var(--text-secondary);
+}
+
+/* Fase 2 e Documentos de Referência */
+.phase2-steps-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 0.95rem;
+}
+
+.phase2-step-card {
+  background-color: var(--bg-surface-alt);
+  border: 1px solid var(--border-subtle);
+  border-left: 4px solid var(--brand-teal);
+  border-radius: var(--radius-md);
+  padding: 1rem 1.1rem;
+  font-size: 0.84rem;
+}
+
+.phase2-step-card strong {
+  display: block;
+  color: var(--text-primary);
+  font-size: 0.92rem;
+  margin: 0.25rem 0 0.35rem 0;
+}
+
+.phase2-step-card p {
+  margin: 0;
+  color: var(--text-secondary);
+}
+
+.deliverables-links-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 0.9rem;
+  margin-top: 0.85rem;
+}
+
+.deliverable-link-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 0.5rem;
+  background-color: var(--bg-surface-alt);
+  border: 1.5px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  padding: 0.95rem 1.1rem;
+  text-decoration: none;
+  color: var(--text-primary);
+  transition: border-color var(--transition-ui), transform var(--transition-ui);
+}
+
+.deliverable-link-card:hover {
+  border-color: var(--brand-gold);
+  transform: translateY(-2px);
+}
+
+.deliverable-link-card strong {
+  font-size: 0.9rem;
+  color: var(--text-primary);
+}
+
+.deliverable-link-card p {
+  margin: 0;
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+}
+
+.deliverable-link-cta {
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: var(--accent-primary);
+}
